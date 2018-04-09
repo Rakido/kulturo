@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :users
+
+  namespace :contents do
+    namespace :search do
+      resource :duration, only: [:show, :create], controller: 'duration'
+      resource :kind,     only: [:show, :create], controller: 'kind'
+      resource :theme,    only: [:show, :create], controller: 'theme'
+    end
+  end
+
+  resources :contents, only: [:index, :show]
 end
