@@ -1,40 +1,26 @@
 <h1>Choisissez une durée</h1>
 
+<%= form_tag contents_search_duration_path do %>
+  <% @durations.each_with_index do |duration, index| %>
+    <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
+    <label for="duration_<%= index %>">
+      <% if index == 0 %>
+        0 - <%= duration %>
+      <% else %>
+        <%= @durations[index-1] %> - <%= duration %>
+      <% end %>
+    </label>
+  <% end %>
 
-<ul>
-  <%= form_tag(contents_search_duration_path) do %>
+
+  <% if false %>
     <% @durations.each do |duration| %>
-    <%= form.collection_check_boxes :choice %>
-
-    <%= radio_button_tag(:choose, "#{duration}") %>
-
+      <%= radio_button_tag(duration, "yo") %>
+      <%= label_tag(duration) %>
     <% end %>
   <% end %>
-</ul>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <div class="wizard-step-box wizard-step1 text-center">
-        <h1>Choose duration</h1>
-
-        <%= form_tag contents_search_step1_path, class: "form" do %>
-          <div class="selectors">
-            <%= select_tag :countries, options_for_select(@countries), multiple: true, class: "countries-selector" %>
-
-            <span>OR</span>
-
-            <div class="no-countries-selector">
-              <%= check_box_tag :no_countries, true %>
-              <%= label_tag :no_countries, "I DON'T KNOW" %>
-            </div>
-          </div>
-
-          <div class="actions">
-            <%= submit_tag "LET'S GO!", class: "btn btn-primary" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+  
+  <div>
+    <%= submit_tag 'Save' %> 
   </div>
-</div>
+<% end -%>
