@@ -1,26 +1,33 @@
-<h1>Choisissez une durée</h1>
-
-<%= form_tag contents_search_duration_path do %>
-  <% @durations.each_with_index do |duration, index| %>
-    <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
-    <label for="duration_<%= index %>">
-      <% if index == 0 %>
-        0 - <%= duration %>
-      <% else %>
-        <%= @durations[index-1] %> - <%= duration %>
+<div class="container">
+  <div class="form-group">
+    <label class="control-label check_boxes optional">Pick a time</label>
+    <div class="category-choices">
+      <%= form_tag contents_search_duration_path do %>
+        <% @durations.each_with_index do |duration, index| %>
+          <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
+          <label for="duration_<%= index %>">
+            <div class="step-choice">
+              <% if index == 0 %>
+                0 - <%= duration %>
+              <% else %>
+                <%= @durations[index-1] %> - <%= duration %>
+              <% end %>
+            </div>
+          </label>
+        <% end %>
+        
+        <div>
+          <%= submit_tag 'Save' %> 
+        </div>
+        
       <% end %>
-    </label>
-  <% end %>
-
-
-  <% if false %>
-    <% @durations.each do |duration| %>
-      <%= radio_button_tag(duration, "yo") %>
-      <%= label_tag(duration) %>
-    <% end %>
-  <% end %>
-  
-  <div>
-    <%= submit_tag 'Save' %> 
+    </div>
   </div>
-<% end -%>
+</div>
+
+
+<%= content_for(:after_js) do %>
+  <script>
+    console.log($('.category-choices'));
+  </script>
+<% end %>

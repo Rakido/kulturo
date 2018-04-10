@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="form-group">
+    <label class="control-label check_boxes optional">Pick a Theme</label>
+    <div class="category-choices">
+      <%= form_tag contents_search_theme_path do %>
+        <% @themes.each_with_index do |theme, index| %>
+          <div class="category-choice">
+            <input type="radio" class="hidden" value="<%= theme %>" name="theme" id="theme_<%= index %>">
+            <label for="theme_<%= index %>">
+              <%= theme %>
+            </label>
+          </div>
+        <% end %>
+        
+        <div>
+          <%= submit_tag 'GOOOOOOOO' %> 
+        </div>
+        
+        <% end %>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="form-group">
+    <label class="control-label check_boxes optional">Pick a kind</label>
+    <div class="category-choices">
+      <%= form_tag contents_search_kind_path do %>
+        <% @kinds.each_with_index do |kind, index| %>
+          <div class="category-choice">
+            <input type="radio" class="hidden" value="<%= kind %>" name="kind" id="kind_<%= index %>">
+            <label for="kind_<%= index %>">
+              <%= kind %>
+            </label>
+          </div>
+        <% end %>
+        
+        <div>
+          <%= submit_tag 'Save' %> 
+        </div>
+        
+        <% end %>
+      </div>
+    </div>
+  </div>
