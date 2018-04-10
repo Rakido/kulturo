@@ -1,6 +1,7 @@
-class ContentsController < ActionController::Base
+class ContentsController < ApplicationController
   # before_action :validate_previous_steps!
-
+  def index 
+  end
 end
 
 # class CitiesController < ApplicationController
