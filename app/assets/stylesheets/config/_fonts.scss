@@ -14,3 +14,21 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h3 {
+  font-size: 2rem !important;
+  line-height:1.5 !important;
+}
+
+.nav-cap {
+  font-weight:bold;
+  font-size: 1rem;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.body-small {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+}
