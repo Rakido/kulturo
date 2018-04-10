@@ -4,4 +4,7 @@ class Contents::Search::DurationController < ApplicationController
     @durations = Content::DURATION
   end
 
+  def create
+  end
+
 end
