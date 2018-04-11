@@ -22,7 +22,7 @@ module Youtube
           title: video.title,
           theme: video.video_category,
           source: 'youtube',
-          url: 'a rajouter',
+          url: "https://www.youtube.com/watch?v=#{video.id}",
           image_url: video.thumbnail_url,
           publication_date: video.published_at,
           description: video.description,

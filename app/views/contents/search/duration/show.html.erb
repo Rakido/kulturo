@@ -4,16 +4,18 @@
     <div class="category-choices">
       <%= form_tag contents_search_duration_path do %>
         <% @durations.each_with_index do |duration, index| %>
-          <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
-          <label for="duration_<%= index %>">
-            <div class="step-choice">
-              <% if index == 0 %>
-                0 - <%= duration %>
-              <% else %>
-                <%= @durations[index-1] %> - <%= duration %>
-              <% end %>
-            </div>
-          </label>
+          <div class="category-choice">
+            <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
+            <label for="duration_<%= index %>">
+              <div class="step-choice">
+                <% if index == 0 %>
+                  0 - <%= duration %>
+                <% else %>
+                  <%= @durations[index-1] %> - <%= duration %>
+                <% end %>
+              </div>
+            </label>
+          </div>
         <% end %>
         
         <div>

@@ -6,8 +6,9 @@ class ContentsController < ApplicationController
       duration: session[:duration],
       kind:     'video'
     }
-
-    videos = Youtube::Search.new('UCIALMKvObZNtJ6AmdCLP7Lg', 0..5)
+    session[:duration] == (15..30) if session[:duration].to_i == 15
+    
+    videos = Youtube::Search.new('UCIALMKvObZNtJ6AmdCLP7Lg', (5..10))
     videos.call
    
     @results = Content.last(3)
