@@ -4,3 +4,4 @@ class Content < ApplicationRecord
   THEMES = %w(politics society economics arts environment sports sciences technology history)
 
 end
+
