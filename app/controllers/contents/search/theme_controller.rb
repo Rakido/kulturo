@@ -5,7 +5,8 @@ class Contents::Search::ThemeController < ApplicationController
   end
 
   def create
-    session[:theme] = params[:theme] 
+    session[:theme] = params[:theme]
+    # session[:theme] = 'economics'
     redirect_to contents_path
   end
 
