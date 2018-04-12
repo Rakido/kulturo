@@ -2,7 +2,7 @@
   <div class="container">
     <h1><%= [session[:duration], session[:kind], session[:theme]] %></h1>
     <div class="row">
-      <% @contents.each do |content| %>
+      <% @contents.last(3).each do |content| %>
         <div class="col-xs-12 col-md-4">
           <div class="card">
             <div class="card-image">
