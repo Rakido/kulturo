@@ -1,31 +1,33 @@
-<div class="container">
-  <div class="form-group text-center">
-    <h2 class="search-title">Pick a kind</h2>
-  </div>
-    <div class="row">
-      <div class="category-choices">
+<div class="background">  
+  <div class="container">
+    <div class="form-group text-center">
+      <h2 class="search-title">Pick a kind</h2>
+    </div>
+      <div class="row">
+        <div class="category-choices">
 
-        <%= form_tag contents_search_kind_path, {class: 'text-center col-xs-12'} do %>
-          <% @kinds.each_with_index do |kind, index| %>
-            <div class="col-md-4">
-              <div class="category-choice">
-                <input type="radio" class="hidden" value="<%= kind %>" name="kind" id="kind_<%= index %>">
-                <label for="kind_<%= index %>">
-                  <div class="step-choice">
-                    <%= kind %>
-                  </div>
-                </label>
+          <%= form_tag contents_search_kind_path, {class: 'text-center col-xs-12'} do %>
+            <% @kinds.each_with_index do |kind, index| %>
+              <div class="col-md-4">
+                <div class="category-choice">
+                  <input type="radio" class="hidden" value="<%= kind %>" name="kind" id="kind_<%= index %>">
+                  <label for="kind_<%= index %>">
+                    <div class="step-choice">
+                      <%= kind %>
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-          <% end %>
-        
+            <% end %>
+          
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 sm-offset-6">
+          <%= submit_tag 'Save', class: 'btn-cta btn btn-primary col-xs-12' %> 
+        </div>    
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-3 sm-offset-6">
-        <%= submit_tag 'Save', class: 'btn btn-primary' %> 
-      </div>    
-    </div>
-  </div>
-<% end %> 
+  <% end %>
+</div>

@@ -1,32 +1,34 @@
-<div class="container">
-  <div class="form-group text-center">
-    <h2 class="search-title">Pick a theme</h2>
-  </div>
-    <div class="row">
-      <div class="category-choices">
+<div class="background">    
+  <div class="container">
+    <div class="form-group text-center">
+      <h2 class="search-title">Pick a theme</h2>
+    </div>
+      <div class="row">
+        <div class="category-choices">
 
-        <%= form_tag contents_search_theme_path, {class: 'text-center col-xs-12'} do %>
-          <% @themes.each_with_index do |theme, index| %>
-            <div class="col-md-4">
-              <div class="category-choice">
-                <input type="radio" class="hidden" value="<%= theme %>" name="theme" id="theme_<%= index %>">
-                <label for="theme_<%= index %>">
-                  <div class="step-choice">
-                    <%= theme %>
-                  </div>
-                </label>
+          <%= form_tag contents_search_theme_path, {class: 'text-center col-xs-12'} do %>
+            <% @themes.each_with_index do |theme, index| %>
+              <div class="col-md-4">
+                <div class="category-choice">
+                  <input type="radio" class="hidden" value="<%= theme %>" name="theme" id="theme_<%= index %>">
+                  <label for="theme_<%= index %>">
+                    <div class="step-choice">
+                      <%= theme %>
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-          <% end %>
-        
+            <% end %>
+          
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 sm-offset-6">
+          <%= submit_tag 'Gooo Wesh', class: 'btn-cta btn btn-primary col-xs-12' %> 
+        </div>    
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-3 sm-offset-6">
-        <%= submit_tag 'Gooo Wesh', class: 'btn btn-primary' %> 
-      </div>    
-    </div>
-  </div>
-<% end %> 
+  <% end %>
+</div>
 

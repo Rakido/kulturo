@@ -1,5 +1,5 @@
 class Content < ApplicationRecord
-  DURATIONS = [5, 10, 15]
+  DURATIONS = [5, 10, 15, 30]
   KINDS = %w(video article podcast)
   THEMES = %w(politics society economics arts environment sciences technology history)
 

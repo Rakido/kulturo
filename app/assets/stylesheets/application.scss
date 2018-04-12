@@ -13,3 +13,32 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+
+// body {
+//    height: 100%;
+//   -webkit-font-smoothing: antialised;
+// }
+
+html { 
+  margin:0;
+  padding:0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.background {
+  width:100vw;
+  height:100vh;
+  background-image: linear-gradient(-157deg, #667EEA 0%, #764BA2 100%) !important; 
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  padding-top:60px;
+}
+
+.underline {
+  height:1px;
+  width:170px;
+  opacity: 0.17;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0 1px 2px 0 rgba(4,11,173,0.50);
+}
