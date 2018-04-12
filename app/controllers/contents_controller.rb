@@ -5,6 +5,12 @@ class ContentsController < ApplicationController
 
     @contents   = videos_data.map { |video_data| Content.create!(video_data) }
   end
+  
+  def show
+    @content = Content.find(params[:id])
+  end
+  
+  private
 
   def duration_range
     # On adapte le choix du user (5, 10, 15) en un range de temps
@@ -28,4 +34,3 @@ class ContentsController < ApplicationController
     Content::THEMES_CHANNELS_MAPPING[theme].first
   end
 end
-
