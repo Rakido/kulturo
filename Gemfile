@@ -11,6 +11,7 @@ gem 'redis'
 
 ## Custom gems
 gem 'jquery'
+gem 'yt'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
