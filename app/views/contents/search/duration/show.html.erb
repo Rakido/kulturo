@@ -1,35 +1,48 @@
 <div class="container">
-  <div class="form-group">
-    <label class="control-label check_boxes optional">Pick a time</label>
-    <div class="category-choices">
-      <%= form_tag contents_search_duration_path do %>
-        <% @durations.each_with_index do |duration, index| %>
-          <div class="category-choice">
-            <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
-            <label for="duration_<%= index %>">
-              <div class="step-choice">
-                <% if index == 0 %>
-                  0 - <%= duration %>
-                <% else %>
-                  <%= @durations[index-1] %> - <%= duration %>
-                <% end %>
+  <div class="form-group text-center">
+    <h2 class="search-title">Pick a time</h2>
+  </div>
+    <div class="row">
+      <div class="category-choices">
+
+        <%= form_tag contents_search_duration_path, {class: 'text-center col-xs-12'} do %>
+          <% @durations.each_with_index do |duration, index| %>
+            <div class="col-md-4">
+              <div class="category-choice">
+                <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
+                <label for="duration_<%= index %>">
+                  <div class="step-choice">
+                    <% if index == 0 %>
+                      0 - <%= duration %>
+                    <% else %>
+                      <%= @durations[index-1] %> - <%= duration %>
+                    <% end %>
+                  </div>
+                </label>
               </div>
-            </label>
-          </div>
-        <% end %>
+            </div>
+          <% end %>
         
-        <div>
-          <%= submit_tag 'Save' %> 
-        </div>
-        
-      <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 sm-offset-6">
+        <%= submit_tag 'Save', class: 'btn btn-primary' %> 
+      </div>    
     </div>
   </div>
-</div>
+<% end %> 
+
+
 
 
 <%= content_for(:after_js) do %>
   <script>
-    console.log($('.category-choices'));
+    var activeItem = document.querySelectorAll('.category-choice');
+    activeItem.addEventListener('click', function(event) {
+          this.classList.toggle('active');
+    });
+
   </script>
 <% end %>

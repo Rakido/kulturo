@@ -12,6 +12,7 @@ module Youtube
         order: 'viewCount',
         video_definition: 'high',
         max_results: 30,
+        video_embeddable: true,
       )
 
       select_matching_videos(videos).each do |video_id|

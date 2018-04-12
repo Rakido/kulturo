@@ -1,22 +1,31 @@
 <div class="container">
-  <div class="form-group">
-    <label class="control-label check_boxes optional">Pick a kind</label>
-    <div class="category-choices">
-      <%= form_tag contents_search_kind_path do %>
-        <% @kinds.each_with_index do |kind, index| %>
-          <div class="category-choice">
-            <input type="radio" class="hidden" value="<%= kind %>" name="kind" id="kind_<%= index %>">
-            <label for="kind_<%= index %>">
-              <%= kind %>
-            </label>
-          </div>
-        <% end %>
+  <div class="form-group text-center">
+    <h2 class="search-title">Pick a kind</h2>
+  </div>
+    <div class="row">
+      <div class="category-choices">
+
+        <%= form_tag contents_search_kind_path, {class: 'text-center col-xs-12'} do %>
+          <% @kinds.each_with_index do |kind, index| %>
+            <div class="col-md-4">
+              <div class="category-choice">
+                <input type="radio" class="hidden" value="<%= kind %>" name="kind" id="kind_<%= index %>">
+                <label for="kind_<%= index %>">
+                  <div class="step-choice">
+                    <%= kind %>
+                  </div>
+                </label>
+              </div>
+            </div>
+          <% end %>
         
-        <div>
-          <%= submit_tag 'Save' %> 
-        </div>
-        
-        <% end %>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-3 sm-offset-6">
+        <%= submit_tag 'Save', class: 'btn btn-primary' %> 
+      </div>    
+    </div>
   </div>
+<% end %> 
