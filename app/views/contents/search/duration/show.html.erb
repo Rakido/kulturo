@@ -1,42 +1,47 @@
-<div class="container">
-  <div class="form-group text-center">
-    <div class="row">
-      <div class="search-head">
-        <div class="nav">
-          <i class="fa fa-chevron-left nav-icon"></i>
+<div class="background">  
+  <div class="container">
+    <div class="form-group text-center">
+      <div class="row">
+        <div class="search-head">
+          <div class="nav">
+            <i class="fa fa-chevron-left nav-icon"></i>
+          </div>
+            <div class="flex-large search-title">Pick a time</div>
+            <div class="underline"></div>
         </div>
-          <div class="flex-large search-title">Pick a time</div>
       </div>
     </div>
-  </div>
-    <div class="row">
-      <div class="category-choices">
+      <div class="row">
+        <div class="category-choices">
 
-        <%= form_tag contents_search_duration_path, {class: 'text-center col-xs-12'} do %>
-          <% @durations.each_with_index do |duration, index| %>
-            <div class="col-md-4">
-              <div class="category-choice">
-                <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
-                <label for="duration_<%= index %>">
-                  <div class="step-choice">
-                    <% if index == 0 %>
-                      0 - <%= duration %>
-                    <% else %>
-                      <%= @durations[index-1] %> - <%= duration %>
-                    <% end %>
-                  </div>
-                </label>
+          <%= form_tag contents_search_duration_path, {class: 'col-xs-12'} do %>
+            <% @durations.each_with_index do |duration, index| %>
+              <div class="col-xs-12">
+                <div class="category-choice">
+                  <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
+                  <i class="fa fa-clock-o category-icon"></i> 
+                  <label for="duration_<%= index %>">
+                    <div class="step-choice">
+                      <% if index == 0 %>
+                        0 - <%= duration %>
+                      <% else %>
+                        <%= @durations[index-1] %> - <%= duration %>
+                      <% end %>
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12' %>
+          <i class="fa fa-chevron-right nav-icon"></i> 
+          
+        </div>    
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <%= submit_tag 'Save', class: 'btn btn-primary col-xs-12' %> 
-      </div>    
-    </div>
-  </div>
-<% end %> 
-
+  <% end %> 
+</div>

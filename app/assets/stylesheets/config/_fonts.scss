@@ -1,9 +1,14 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
+@font-face {
+  font-family: "Brown";
+  src: url(/assets/Brown-Bold.otf) format("truetype");
+}
+
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Brown", "Helvetica", "sans-serif";
+$headers-font: "Brown", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -34,9 +39,10 @@ h3 {
 }
 
 .search-title {
-  color: #2B2B2B;
-  font-size:20px;
+  font-family: "Brown-Bold";
   opacity: 0.87;
-  font-weight:bold;
-  border-bottom: 1px solid #ED2D3E;
+  font-size: 20px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 1px rgba(4,11,173,0.50);
 }
