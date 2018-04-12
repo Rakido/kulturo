@@ -1,6 +1,13 @@
 <div class="container">
   <div class="form-group text-center">
-    <h2 class="search-title">Pick a time</h2>
+    <div class="row">
+      <div class="search-head">
+        <div class="nav">
+          <i class="fa fa-chevron-left nav-icon"></i>
+        </div>
+          <div class="flex-large search-title">Pick a time</div>
+      </div>
+    </div>
   </div>
     <div class="row">
       <div class="category-choices">
@@ -22,27 +29,14 @@
               </div>
             </div>
           <% end %>
-        
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-3 sm-offset-6">
-        <%= submit_tag 'Save', class: 'btn btn-primary' %> 
+      <div class="col-xs-12">
+        <%= submit_tag 'Save', class: 'btn btn-primary col-xs-12' %> 
       </div>    
     </div>
   </div>
 <% end %> 
 
-
-
-
-<%= content_for(:after_js) do %>
-  <script>
-    var activeItem = document.querySelectorAll('.category-choice');
-    activeItem.addEventListener('click', function(event) {
-          this.classList.toggle('active');
-    });
-
-  </script>
-<% end %>
