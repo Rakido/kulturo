@@ -11,37 +11,34 @@
         </div>
       </div>
     </div>
-      <div class="row">
-        <div class="category-choices">
-
-          <%= form_tag contents_search_duration_path, {class: 'col-xs-12'} do %>
-            <% @durations.each_with_index do |duration, index| %>
-              <div class="col-xs-12">
+    <div class="row">
+      <div class="category-choices">
+        <%= form_tag contents_search_duration_path, {class: 'col-xs-12'} do %>
+          <% @durations.each_with_index do |duration, index| %>
+            <div class="col-xs-12">
+              <label for="duration_<%= index %>">
                 <div class="category-choice">
-                  <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
                   <i class="fa fa-clock-o category-icon"></i> 
-                  <label for="duration_<%= index %>">
-                    <div class="step-choice">
-                      <% if index == 0 %>
-                        0 - <%= duration %>
-                      <% else %>
-                        <%= @durations[index-1] %> - <%= duration %>
-                      <% end %>
-                    </div>
-                  </label>
+                  <div class="step-choice">
+                    <% if index == 0 %>
+                      0 - <%= duration %>
+                    <% else %>
+                      <%= @durations[index-1] %> - <%= duration %>
+                    <% end %>
+                  </div>
                 </div>
-              </div>
-            <% end %>
-        </div>
-      </div>
+              </label>
 
-      <div class="row">
-        <div class="col-xs-6">
-          <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12' %>
-          <i class="fa fa-chevron-right nav-icon"></i> 
-          
-        </div>    
+              <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
+            </div>
+          <% end %>
+
+          <div class="col-xs-6">
+            <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12' %>
+            <i class="fa fa-chevron-right nav-icon"></i>    
+          </div>    
+        <% end %> 
       </div>
     </div>
-  <% end %> 
+  </div>
 </div>
