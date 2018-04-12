@@ -33,6 +33,24 @@ module Youtube
 
     private
 
+    def select_30_matching_videos(videos)
+      first_30_plain_data_videos = videos.first(30)
+
+      full_data_videos = first_30_plain_data_videos.map.with_index do |video, index|
+        full_data_video = Yt::Video.new(id: video.id)
+
+        valid_video?(full_data_video) ? full_data_video : nil
+      end
+
+      full_data_videos.compact
+    end
+
+    def valid_video?(video)
+      duration_in_range(video)
+      # && has_enough_views(video)
+      # && good_ratio_likes_dislikes(video)
+    end
+
     def duration_in_range(video)
       @duration_range.include?(video.duration / 60)
     end
@@ -47,38 +65,6 @@ module Youtube
 
       ratio_dislike_to_total_reactions < 10
     end
-
-    def select_30_matching_videos(videos)
-      first_30_plain_data_videos = videos.first(30)
-
-      full_data_videos = first_30_plain_data_videos.map.with_index do |video, index|
-        full_data_video = Yt::Video.new(id: video.id)
-
-        valid_video?(full_data_video) ? full_data_video : nil
-      end
-
-      full_data_videos.compact
-    end
-
-    def valid_video?(video)
-      duration_in_range(video) && has_enough_views(video) &&
-          good_ratio_likes_dislikes(video)
-    end
   end
 end
-
-# .each do |video_id|
-#         video = Yt::Video.new id: video_id
-#         Content.create(
-#           kind: 'video',
-#           duration: video.length,
-#           title: video.title,
-#           theme: video.video_category,
-#           source: 'youtube',
-#           url: "https://www.youtube.com/watch?v=#{video.id}",
-#           image_url: video.thumbnail_url,
-#           publication_date: video.published_at,
-#           description: video.description,
-#           )
-#       end
 
