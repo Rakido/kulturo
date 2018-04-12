@@ -8,31 +8,32 @@ module Youtube
     def call
       channel = Yt::Channel.new id: @channel_id
 
-      videos  = channel.videos.where(
+      ordered_videos_by_view_count = channel.videos.where(
         order: 'viewCount',
         video_definition: 'high',
-        max_results: 30,
         video_embeddable: true,
       )
 
-      select_matching_videos(videos).each do |video_id|
-        video = Yt::Video.new id: video_id
-        Content.create(
-          kind: 'video',
-          duration: video.length,
-          title: video.title,
-          theme: video.video_category,
-          source: 'youtube',
-          url: "https://www.youtube.com/watch?v=#{video.id}",
-          image_url: video.thumbnail_url,
+      selected_videos = select_30_matching_videos(ordered_videos_by_view_count)
+
+      selected_videos.map do |video|
+        {
+          kind:             'video',
+          duration:         video.length,
+          title:            video.title,
+          theme:            video.video_category.title,
+          source:           'youtube',
+          url:              "https://www.youtube.com/watch?v=#{video.id}",
+          image_url:        video.thumbnail_url,
           publication_date: video.published_at,
-          description: video.description,
-          )
+          description:      video.description,
+        }
       end
     end
+
     private
 
-    def too_long(video)
+    def duration_in_range(video)
       @duration_range.include?(video.duration / 60)
     end
 
@@ -40,37 +41,44 @@ module Youtube
       video.view_count > 50_000
     end
 
-    def ratio_like_dislike_views_count_not_good(video)
-      (video.dislike_count / (video.like_count + video.dislike_count).to_f * 100) < 5
+    def good_ratio_likes_dislikes(video)
+      total_reactions_count = video.like_count + video.dislike_count
+      ratio_dislike_to_total_reactions = (video.dislike_count / total_reactions_count.to_f) * 100
+
+      ratio_dislike_to_total_reactions < 10
     end
 
-    def select_matching_videos(videos)
-      # TODO: transfer code from search_full_data.rb, using @duration_range
-      ids = videos.map do |video| 
-        video.id
-      end
-      sorted_videos = ids.map.with_index do |id, index|
-        next if index > 30
-        video = Yt::Video.new id: id
-        puts "#{index + 1}. #{id} - #{video.view_count}, duration: #{video.duration}, likes_count: #{video.like_count}"
+    def select_30_matching_videos(videos)
+      first_30_plain_data_videos = videos.first(30)
 
-        next unless too_long(video)
-        next unless has_enough_views(video)
-        next unless ratio_like_dislike_views_count_not_good(video)
+      full_data_videos = first_30_plain_data_videos.map.with_index do |video, index|
+        full_data_video = Yt::Video.new(id: video.id)
 
-        puts "Success, video with id: #{id} selected!"
-        id
+        valid_video?(full_data_video) ? full_data_video : nil
       end
-      sorted_videos.compact!
-      sorted_videos
+
+      full_data_videos.compact
+    end
+
+    def valid_video?(video)
+      duration_in_range(video) && has_enough_views(video) &&
+          good_ratio_likes_dislikes(video)
     end
   end
 end
 
-# How to use it in controller
-# videos = Youtube::Search.new('YFUZHFIHZF', 0..5)
+# .each do |video_id|
+#         video = Yt::Video.new id: video_id
+#         Content.create(
+#           kind: 'video',
+#           duration: video.length,
+#           title: video.title,
+#           theme: video.video_category,
+#           source: 'youtube',
+#           url: "https://www.youtube.com/watch?v=#{video.id}",
+#           image_url: video.thumbnail_url,
+#           publication_date: video.published_at,
+#           description: video.description,
+#           )
+#       end
 
-# contents_attributes = extract_content_attributes(videos)
-# contents_attributes.each do |content_attributes|
-#   Content.create(content_attributes)
-# end
