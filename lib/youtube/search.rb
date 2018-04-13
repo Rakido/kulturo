@@ -16,7 +16,7 @@ module Youtube
 
       selected_videos = select_30_matching_videos(ordered_videos_by_view_count)
 
-      selected_videos.map do |video|
+      return selected_videos.map do |video|
         {
           kind:             'video',
           duration:         video.length,
@@ -34,15 +34,19 @@ module Youtube
     private
 
     def select_30_matching_videos(videos)
+      full_data_videos = []
+
       first_30_plain_data_videos = videos.first(30)
 
-      full_data_videos = first_30_plain_data_videos.map.with_index do |video, index|
+      first_30_plain_data_videos.each do |video|
         full_data_video = Yt::Video.new(id: video.id)
 
-        valid_video?(full_data_video) ? full_data_video : nil
+        if valid_video?(full_data_video)
+          full_data_videos << full_data_video
+        end
       end
 
-      full_data_videos.compact
+      return full_data_videos
     end
 
     def valid_video?(video)
