@@ -10,7 +10,7 @@
     </div>
     <div class="row">
       <div class="category-choices">
-        <%= form_tag contents_search_kind_path, {class: 'col-xs-12'} do %>
+        <%= form_tag contents_search_kind_path, {class: 'col-xs-12 content-kind-form'} do %>
           <% @kinds.each_with_index do |kind, index| %>
             <div class="col-xs-12">
               <label for="kind_<%= index %>">
@@ -29,7 +29,7 @@
           <% end %>
 
           <div class="col-xs-6">
-            <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12' %>
+            <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12', id: 'button-kind' %>
             <i class="fa fa-chevron-right nav-icon"></i>    
           </div>    
         <% end %> 

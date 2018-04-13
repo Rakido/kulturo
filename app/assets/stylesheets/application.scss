@@ -26,6 +26,14 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+a {
+ color: inherit;
+}
+
+a:hover {
+ color: inherit;
+}
+
 .background {
   width:100vw;
   height:100vh;
