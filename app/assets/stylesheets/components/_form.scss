@@ -33,6 +33,7 @@
   text-shadow: 0 1px 1px rgba(4,11,173,0.20);
 }
 
+
 .category-choice {
   height:75px;
   color:rgba(255,255,255,0.77);
@@ -59,25 +60,41 @@
   }
 }
 
+label {
+  width:100%
+}
+
 .category-icon {
-  padding:16px;
-  font-size:32px;
-  color:white;
+  padding-right:12px;
+  // font-size:32px;
+  fill: #FFF;
   opacity:.75;
   text-shadow: 0 1px 1px 0 rgba(4,11,173,0.20);
 }
 
 .btn-cta {
   font-family:"Brown-Bold";
+  position:fixed;
+  bottom: 32px;
   height:48px;
   background-image: linear-gradient(-136deg, #69DFB1 0%, #8FD3F4 100%);
   box-shadow: 0 4px 20px 0 rgba(4,11,173,0.30);
   border-radius: 8px !important;
   width:155px;
-
   color: #715AB7;
   line-height: 25px;
   text-transform:uppercase;
   letter-spacing: 2px;
   text-shadow: 0 1px 0 rgba(167,255,239,0.20);
+}
+
+.form-group {
+  margin-bottom: 0px !important;
+}
+
+.value {
+  position: relative;
+  top: 50px;
+  width: 20px;
+  left: 20px;
 }
