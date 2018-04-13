@@ -3,7 +3,12 @@
 
 @font-face {
   font-family: "Brown";
-  src: url(/assets/Brown-Bold.otf) format("truetype");
+  src: font-url('Brown-Bold.otf') format("truetype");
+}
+
+@font-face {
+  font-family: "Arnhem";
+  src: font-url('Arnhem-Blond.otf') format("truetype");
 }
 
 // Define fonts for body and headers
@@ -19,6 +24,13 @@ $headers-font: "Brown", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h1 {
+  color: rgba(255,255,255,0.75) !important;
+  font-family: Brown-Bold;
+  font-size:25px !important;
+  text-shadow: 0 1px 1px rgba(4,11,173,0.50);
+}
 
 h3 {
   font-size: 2rem !important;
@@ -39,10 +51,18 @@ h3 {
 }
 
 .search-title {
-  font-family: "Brown-Bold";
+  font-family: "Brown";
   opacity: 0.87;
   font-size: 20px;
   color: #FFFFFF;
   letter-spacing: 0.5px;
   text-shadow: 0 1px 1px rgba(4,11,173,0.50);
+}
+
+.onboarding {
+  font-family: "Arnhem";
+  color: rgba(255,255,255,0.75) !important;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
 }
