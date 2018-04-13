@@ -1,48 +1,34 @@
-<h1><%= [session[:duration], session[:kind], session[:theme]] %></h1>
+<div class="background">
 <% results = Content.last(3) %>
 
+  <div class="search-head">
+    <div class="flex-large search-title">Vos résultats</div>
+    <div class="underline"></div>
+  </div>
+  <div class="main-carousel">
+    <% results.each do |result| %>
+      <div class="carousel-cell">
+          <%= link_to content_path(result) do %>
+            <div class="card">
+              <div class="card-image">
+                <iframe width="100%" height="260" src="https://www.youtube.com/embed/<%=result.url.last(11)%>?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen showinfo="0"></iframe>
+              </div>
+              <div class="card-content text-center">
+                <div class="nav-cap">
+                  <%= result.source.capitalize %>
+                </div>
+                <h3 class="card-title">
+                  <%= result.title %>
+                </h3>
 
-<div class="main-carousel">
-  <% results.each do |result| %>
-    <div class="carousel-cell">
-      <div class="card">
-        <%= link_to content_path(result) do %>
-<div class="container">
- <h1><%= [session[:duration], session[:kind], session[:theme]] %></h1>
- <% results = Content.last(3) %>
- <div class="row">
-   <%= results.each do |result| %>
-     <div class="col-xs-12 col-md-4">
+                <div class="card-description body-small">
+                  <%= truncate(result.description, length: 150) %>
+                </div>
 
-       <%= link_to content_path(result) do %>
-         <div class="card">
-          <div class="card-image">
-            <iframe width="100%" height="260" src="https://www.youtube.com/embed/<%=result.url.last(11)%>?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen showinfo="0"></iframe>
-          </div>
-          <div class="card-content text-center">
-            <div class="nav-cap">
-              <%= result.source.capitalize %>
-            </div>
-            <h3 class="card-title">
-              <%= result.title %>
-            </h3>
-
-            <div class="card-description body-small"
-              <%= result.description %>
             </div>
           </div>
         <% end %>
       </div>
-    </div>
-  <% end %>
-              <%= truncate(result.description, length: 150) %>
-            </div>
-          </div>
-        </div>
-       <% end %>
-
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-</div>
-
