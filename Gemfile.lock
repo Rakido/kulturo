@@ -66,6 +66,7 @@ GEM
       sass (>= 3.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    greensock-rails (1.20.3.0)
     i18n (1.0.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -196,6 +197,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-sass (~> 4.7)
+  greensock-rails
   jbuilder (~> 2.0)
   jquery
   listen (~> 3.0.5)
