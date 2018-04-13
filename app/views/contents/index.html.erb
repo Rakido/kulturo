@@ -1,3 +1,12 @@
+<h1><%= [session[:duration], session[:kind], session[:theme]] %></h1>
+<% results = Content.last(3) %>
+
+
+<div class="main-carousel">
+  <% results.each do |result| %>
+    <div class="carousel-cell">
+      <div class="card">
+        <%= link_to content_path(result) do %>
 <div class="container">
  <h1><%= [session[:duration], session[:kind], session[:theme]] %></h1>
  <% results = Content.last(3) %>
@@ -18,7 +27,14 @@
               <%= result.title %>
             </h3>
 
-            <div class="card-description body-small">
+            <div class="card-description body-small"
+              <%= result.description %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
               <%= truncate(result.description, length: 150) %>
             </div>
           </div>
@@ -29,3 +45,4 @@
   <% end %>
 </div>
 </div>
+
