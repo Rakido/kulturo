@@ -29,6 +29,9 @@ html {
 .background {
   width:100vw;
   height:100vh;
+  position:fixed;
+  top:0px;
+  left:0px;
   background-image: linear-gradient(-157deg, #667EEA 0%, #764BA2 100%) !important; 
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
@@ -36,6 +39,7 @@ html {
 }
 
 .underline {
+  margin: 0 auto;
   height:1px;
   width:170px;
   opacity: 0.17;
