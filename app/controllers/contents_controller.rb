@@ -16,6 +16,8 @@ class ContentsController < ApplicationController
     # On adapte le choix du user (5, 10, 15) en un range de temps
 
     case session[:duration].to_i
+    when 30
+      (26..32)
     when 15
       (14..18)
     when 10
