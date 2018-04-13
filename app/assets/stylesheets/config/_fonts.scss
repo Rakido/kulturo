@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Brown";
-  src: url(/assets/Brown-Bold.otf) format("truetype");
+  src: asset-url(/assets/Brown-Bold.otf) format("truetype");
 }
 
 // Define fonts for body and headers
@@ -19,6 +19,13 @@ $headers-font: "Brown", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h1 {
+  color: rgba(255,255,255,0.75) !important;
+  font-family: Brown-Bold;
+  font-size:25px !important;
+  text-shadow: 0 1px 1px rgba(4,11,173,0.50);
+}
 
 h3 {
   font-size: 2rem !important;
@@ -45,4 +52,11 @@ h3 {
   color: #FFFFFF;
   letter-spacing: 0.5px;
   text-shadow: 0 1px 1px rgba(4,11,173,0.50);
+}
+
+.onboarding {
+  color: rgba(255,255,255,0.75) !important;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
 }
