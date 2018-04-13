@@ -6,6 +6,11 @@
   src: font-url('Brown-Bold.otf') format("truetype");
 }
 
+@font-face {
+  font-family: "Arnhem";
+  src: font-url('Arnhem-Blond.otf') format("truetype");
+}
+
 // Define fonts for body and headers
 $body-font: "Brown", "Helvetica", "sans-serif";
 $headers-font: "Brown", "Helvetica", "sans-serif";
@@ -55,6 +60,7 @@ h3 {
 }
 
 .onboarding {
+  font-family: "Arnhem";
   color: rgba(255,255,255,0.75) !important;
   font-size: 1.5rem;
   line-height: 1.7;
