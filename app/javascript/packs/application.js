@@ -1,3 +1,5 @@
 import "bootstrap";
 import  { activateUserChoice } from "../components/active";
-activateUserChoice();
+import  { animateCategories } from "../components/animationchoices";
+activateUserChoice(); 
+animateCategories(); 
