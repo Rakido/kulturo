@@ -1,48 +1,44 @@
-<div class="container">
-  <div class="form-group text-center">
-    <h2 class="search-title">Pick a time</h2>
-  </div>
-    <div class="row">
-      <div class="category-choices">
-
-        <%= form_tag contents_search_duration_path, {class: 'text-center col-xs-12'} do %>
-          <% @durations.each_with_index do |duration, index| %>
-            <div class="col-md-4">
-              <div class="category-choice">
-                <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
-                <label for="duration_<%= index %>">
-                  <div class="step-choice">
-                    <% if index == 0 %>
-                      0 - <%= duration %>
-                    <% else %>
-                      <%= @durations[index-1] %> - <%= duration %>
-                    <% end %>
-                  </div>
-                </label>
-              </div>
-            </div>
-          <% end %>
-        
+<div class="background">  
+  <div class="container">
+    <div class="form-group text-center">
+      <div class="row text-center">
+        <div class="search-head">
+            <div class="flex-large search-title">Pick a time</div>
+            <div class="underline"></div>
+        </div>
       </div>
     </div>
-
     <div class="row">
-      <div class="col-md-3 sm-offset-6">
-        <%= submit_tag 'Save', class: 'btn btn-primary' %> 
-      </div>    
+      <div class="category-choices">
+        <%= form_tag contents_search_duration_path, {class: 'col-xs-12'} do %>
+          <% @durations.each_with_index do |duration, index| %>
+            <div class="col-xs-12">
+              <label for="duration_<%= index %>">
+                <div class="category-choice">
+                  <!-- <i class="fa fa-clock-o category-icon"></i>  -->
+                  <div class="icon">
+                    <div class="value">
+                      <%= duration %>
+                    </div> 
+                    <%= image_tag "contents/duration-pictos/duration-#{duration}.svg", class: "category-icon" %>              
+                  </div>
+
+                  <div class="step-choice">
+                    <%= duration_naming(duration) %>
+                  </div>
+                </div>
+              </label>
+
+              <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
+            </div>
+          <% end %>
+
+          <div class="col-xs-6">
+            <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12' %>
+            <i class="fa fa-chevron-right nav-icon"></i>    
+          </div>    
+        <% end %> 
+      </div>
     </div>
   </div>
-<% end %> 
-
-
-
-
-<%= content_for(:after_js) do %>
-  <script>
-    var activeItem = document.querySelectorAll('.category-choice');
-    activeItem.addEventListener('click', function(event) {
-          this.classList.toggle('active');
-    });
-
-  </script>
-<% end %>
+</div>

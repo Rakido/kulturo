@@ -12,6 +12,7 @@ gem 'redis'
 ## Custom gems
 gem 'jquery'
 gem 'yt'
+gem 'greensock-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

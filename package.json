@@ -4,8 +4,14 @@
   "dependencies": {
     "@rails/webpacker": "3.4",
     "bootstrap": "3",
+    
     "flickity": "^2.1.1",
     "jquery": "^3.3.1"
+    "greensock": "^1.20.2",
+    "gsap": "^1.20.4",
+    "jquery": "^3.3.1",
+    "kute": "^1.0.0",
+    "kute.js": "^1.6.5"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

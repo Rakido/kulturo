@@ -11,8 +11,8 @@ $font-size-base: 18px;
 
 // Colors
 $gray-base:       $gray;
-$brand-primary:   $blue;
-$brand-success:   $green;
+$brand-primary:   #6DFFB3;
+$brand-success:   #7A63D2;
 $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
@@ -21,5 +21,7 @@ $brand-warning:   $orange;
 $border-radius-base:  2px;
 $border-radius-large: 2px;
 $border-radius-small: 2px;
+
+$primary : $red;
 
 // Override other variables below!

@@ -5,8 +5,8 @@ class Contents::Search::DurationController < ApplicationController
   end
 
   def create
-    # @duration = params[:duration]
     session[:duration] = params[:duration]
+    # session[:duration] = 15
     redirect_to contents_search_kind_path
   end
 

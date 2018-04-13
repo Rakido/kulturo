@@ -1,31 +1,39 @@
-<div class="container">
-  <div class="form-group text-center">
-    <h2 class="search-title">Pick a kind</h2>
-  </div>
-    <div class="row">
-      <div class="category-choices">
-
-        <%= form_tag contents_search_kind_path, {class: 'text-center col-xs-12'} do %>
-          <% @kinds.each_with_index do |kind, index| %>
-            <div class="col-md-4">
-              <div class="category-choice">
-                <input type="radio" class="hidden" value="<%= kind %>" name="kind" id="kind_<%= index %>">
-                <label for="kind_<%= index %>">
-                  <div class="step-choice">
-                    <%= kind %>
-                  </div>
-                </label>
-              </div>
-            </div>
-          <% end %>
-        
+<div class="background">  
+  <div class="container">
+    <div class="form-group text-center">
+      <div class="row text-center">
+        <div class="search-head">
+            <div class="flex-large search-title">Pick a kind</div>
+            <div class="underline"></div>
+        </div>
       </div>
     </div>
-
     <div class="row">
-      <div class="col-md-3 sm-offset-6">
-        <%= submit_tag 'Save', class: 'btn btn-primary' %> 
-      </div>    
+      <div class="category-choices">
+        <%= form_tag contents_search_kind_path, {class: 'col-xs-12'} do %>
+          <% @kinds.each_with_index do |kind, index| %>
+            <div class="col-xs-12">
+              <label for="kind_<%= index %>">
+                <div class="category-choice">
+                  <div class="icon">
+                    <%= image_tag "contents/kind-pictos/kind-#{kind}.svg", class: "category-icon" %>              
+                  </div> 
+                  <div class="step-choice">
+                    <%= kind_naming(kind) %>
+                  </div>
+                </div>
+              </label>
+
+              <input type="radio" class="hidden" value="<%= kind %>" name="kind" id="kind_<%= index %>">
+            </div>
+          <% end %>
+
+          <div class="col-xs-6">
+            <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12' %>
+            <i class="fa fa-chevron-right nav-icon"></i>    
+          </div>    
+        <% end %> 
+      </div>
     </div>
   </div>
-<% end %> 
+</div>

@@ -1,28 +1,36 @@
 class ContentsController < ApplicationController
-  # before_action :validate_previous_steps!
   def index
-    search_params = {
-      theme:    session[:theme],
-      duration: session[:duration],
-      kind:     'video'
-    }
-    if session[:duration].to_i == 15
-      session[:duration] == (14..18)
-    elsif session[:duration].to_i == 10
-      session[:duration] == (8..12)
-    elsif session[:duration].to_i == 5
-      session[:duration] == (4..6)
-    end
+    search      = Youtube::Search.new(youtube_channel_id, duration_range)
+    videos_data = search.call
 
-    videos = Youtube::Search.new('UCqnbDFdCpuN8CMEg0VuEBqA', (5..10))
-    videos.call
-
-    @results = Content.last(3)
-    end
-
+    @contents   = videos_data.map { |video_data| Content.create!(video_data) }
+  end
+  
   def show
-
     @content = Content.find(params[:id])
+  end
+  
+  private
 
+  def duration_range
+    # On adapte le choix du user (5, 10, 15) en un range de temps
+
+    case session[:duration].to_i
+    when 15
+      (14..18)
+    when 10
+      (8..12)
+    when 5
+      (4..6)
+    end
+  end
+
+  def theme
+    session[:theme].to_sym
+  end
+
+  def youtube_channel_id
+    # Faire le matching entre le choix du user et le channel ID avec notre hash
+    Content::THEMES_CHANNELS_MAPPING[theme].first
   end
 end
