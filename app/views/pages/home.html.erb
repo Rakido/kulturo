@@ -1,63 +1,19 @@
-<!-- carousel proposition valeur -->
-
-<div class="container">
+<div class="background">
 <h1>Kulturo</h1>
-  <div class="row" text-center>
-    <div class=""col-md-4">
+<h2>Métro, boulot, Kulturo !</h2>
 
-      <div id="my-slider" class="carousel slide" data-ride="carousel">
+<!-- Flickity HTML init -->
+  <div class="carousel"
+    data-flickity='{ "wrapAround": true }'>
+    <div class="carousel-cell green"></div>
+    <div class="carousel-cell green"></div>
+    <div class="carousel-cell green"></div>
+  </div>
 
-        <!-- Indicators  -->
-        <ol class="carousel-indicators">
-          <li data-target="#my-slider" data-slide-to="0" class="active"></li>
-          <li data-target="#my-slider" data-slide-to="1"></li>
-          <li data-target="#my-slider" data-slide-to="2"></li>
-        </ol>
-
-        <!-- wrapper for sldes -->
-        <div class="carousel-inner" roles="listbox" >
-          <div class="item active">
-            <%= image_tag("stopwatch.png") %>
-              <div class="carousel-caption">
-                <h2> Durée</h2>
-              </div>
-          </div>
-
-          <div class="item">
-            <%= image_tag("youtube.png") %>
-              <div class="carousel-caption">
-                <h2> Kind</h2>
-              </div>
-          </div>
-
-          <div class="item">
-            <%= image_tag("search.png") %>
-              <div class="carousel-caption">
-                <h2> Theme</h2>
-              </div>
-          </div>
-
-          <!-- switcher slide  -->
-          <a class="left carousel-control" href="#my-slide" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-
-          <a class="right carousel-control" href="#my-slide" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-         </a>
-        </div>
-      </div>
-    </div>
-  </div>*
 
   <!-- redirect to content settings -->
-  <div>
-  <%= link_to "Go!", contents_search_duration_path, class: 'btn btn-primary' %>
-  </div>
+   <div>
+   <%= link_to "Go!", contents_search_duration_path, class: 'btn btn-primary' %>
+   </div>
+
 </div>
-
-
-
-

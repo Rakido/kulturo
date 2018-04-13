@@ -10,16 +10,13 @@
     </div>
     <div class="row">
       <div class="category-choices">
-        <%= form_tag contents_search_duration_path, {class: 'col-xs-12'} do %>
+        <%= form_tag contents_search_duration_path, {class: 'col-xs-12 content-duration-form'} do %>
           <% @durations.each_with_index do |duration, index| %>
             <div class="col-xs-12">
               <label for="duration_<%= index %>">
                 <div class="category-choice">
                   <!-- <i class="fa fa-clock-o category-icon"></i>  -->
                   <div class="icon">
-                    <div class="value">
-                      <%= duration %>
-                    </div> 
                     <%= image_tag "contents/duration-pictos/duration-#{duration}.svg", class: "category-icon" %>              
                   </div>
 
@@ -34,7 +31,7 @@
           <% end %>
 
           <div class="col-xs-6">
-            <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12' %>
+            <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12', id: 'button-duration' %>
             <i class="fa fa-chevron-right nav-icon"></i>    
           </div>    
         <% end %> 
@@ -42,3 +39,5 @@
     </div>
   </div>
 </div>
+
+

@@ -15,6 +15,3 @@ class Content < ApplicationRecord
   }
 end
 
-
-# theme = :arts
-# Content::THEMES_CHANNELS_MAPPING[theme].first # => 'UC9CswYtb5rL31CHwyVoyJvQ'
