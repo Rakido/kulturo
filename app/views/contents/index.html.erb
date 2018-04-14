@@ -1,4 +1,4 @@
-<div class="background">
+<!-- <div class="background">
 <% results = Content.last(3) %>
 
   <div class="search-head">
@@ -31,4 +31,30 @@
       </div>
     <% end %>
   </div>
+</div> -->
+
+<div class="carousel" data-flickity>
+  <% results = Content.last(3) %>
+  <% results.each do |result| %>
+    <div class="carousel-cell-contents">
+      <%= link_to content_path(result) do %>
+      <div class="card">
+        <div class="card-image">
+          <iframe width="100%" height="260" src="https://www.youtube.com/embed/<%=result.url.last(11)%>?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen showinfo="0"></iframe>
+        </div>
+        <div class="card-content text-center">
+          <div class="nav-cap">
+            <%= result.source.capitalize %>
+          </div>
+          <h3 class="card-title">
+            <%= result.title %>
+          </h3>
+          <div class="card-description body-small">
+            <%= truncate(result.description, length: 150) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 </div>

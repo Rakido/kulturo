@@ -4,7 +4,7 @@ class Content < ApplicationRecord
   THEMES = %w(politics society economics arts environment sciences technology history)
 
   THEMES_CHANNELS_MAPPING = {
-    politics:     ['UCV61VqLMr2eIhH4f51PV0gA'],
+    politics:     ['UCVeMw72tepFl1Zt5fvf9QKQ'],
     society:      ['UCZaT_X_mc0BI-djXOlfhqWQ'],
     economics:    ['UCIALMKvObZNtJ6AmdCLP7Lg'],
     environment:  ['UCpVm7bg6pXKo1Pr6k5kxG9A'],
