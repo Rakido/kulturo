@@ -1,11 +1,13 @@
 class BookmarksController < ApplicationController
   def create
-    binding.pry
+
     @content = Content.find(params[:content_id])
     @bookmark = Bookmark.new(content: @content, user: current_user)
 
     @bookmark.save
-    redirect_to content_path(@content)
+    # notification pour contenu sauvegarder
+    # flash[:notice] = "Post successfully created"
+    redirect_to profile_path
   end
 end
 

@@ -19,9 +19,11 @@
           <div class="card-description body-small">
             <%= truncate(content.description, length: 60) %>
           </div>
+
           <%= link_to content_bookmarks_path(content), method: :post, class: "card-icon-social" do %>
             <i class="fa fa-bookmark"></i>
           <% end %>
+
         </div>
       </div>
     <% end %>
