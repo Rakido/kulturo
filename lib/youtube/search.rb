@@ -1,46 +1,40 @@
 module Youtube
   class Search
-    def initialize(channels_ids, duration_range)
-      @channels_ids     = channels_ids
-      @duration_range   = duration_range
+    def initialize(channel_id)
+      @channel_id = channel_id
     end
 
     def call
+      channel = Yt::Channel.new id: @channel_id
 
-      @channels_ids.map do |id|
-        channel = Yt::Channel.new id: id
+      ordered_videos_by_view_count = channel.videos.where(
+        order: 'viewCount',
+        video_definition: 'high',
+        video_embeddable: true,
+      )
 
-        ordered_videos_by_view_count = channel.videos.where(
-          order: 'viewCount',
-          video_definition: 'high',
-          video_embeddable: true,
-        )
-
-        selected_videos = select_30_matching_videos(ordered_videos_by_view_count)
-        selected_videos.map do |video|
-          {
-            kind:             'video',
-            duration:         video.length,
-            title:            video.title,
-            theme:            video.video_category.title,
-            source:           'youtube',
-            url:              "https://www.youtube.com/watch?v=#{video.id}",
-            image_url:        video.thumbnail_url,
-            publication_date: video.published_at,
-            description:      video.description,
-          }
-        end
+      selected_videos = select_matching_videos(ordered_videos_by_view_count)
+      selected_videos.map do |video|
+        {
+          kind:             'video',
+          duration:         video.duration,
+          title:            video.title,
+          source:           'youtube',
+          source_theme:     video.video_category.title,
+          url:              "https://www.youtube.com/watch?v=#{video.id}",
+          image_url:        video.thumbnail_url,
+          publication_date: video.published_at,
+          description:      video.description,
+        }
       end
     end
 
     private
 
-    def select_30_matching_videos(videos)
+    def select_matching_videos(videos)
       full_data_videos = []
 
-      first_30_plain_data_videos = videos.first(30)
-
-      first_30_plain_data_videos.each do |video|
+      videos.each do |video|
         full_data_video = Yt::Video.new(id: video.id)
 
         if valid_video?(full_data_video)
@@ -52,11 +46,7 @@ module Youtube
     end
 
     def valid_video?(video)
-      duration_in_range(video) && has_enough_views(video) && good_ratio_likes_dislikes(video)
-    end
-
-    def duration_in_range(video)
-      @duration_range.include?(video.duration / 60)
+      has_enough_views(video) && good_ratio_likes_dislikes(video)
     end
 
     def has_enough_views(video)
