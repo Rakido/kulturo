@@ -17,7 +17,8 @@
           <div class="card-description body-small">
             <%= truncate(content.description, length: 150) %>
           </div>
-          <%= link_to 'Bookmark', content_bookmarks_path(content), method: :post %>
+          <!-- non fonctionnel -->
+          <%= link_to 'Lire plus tard', content_bookmarks_path(content), method: :post %>
         </div>
       </div>
     <% end %>

@@ -14,8 +14,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 import  { activateUserChoice } from "../components/active";
 import  { animateCategories } from "../components/animationchoices";
 import { switchPageAnimationDuration, switchPageAnimationKind } from "../components/switch-animation";
+import {displayAlert} from "../components/alert";
 activateUserChoice(); 
 animateCategories(); 
 switchPageAnimationDuration(); 
 switchPageAnimationKind();
+displayAlert();
 
