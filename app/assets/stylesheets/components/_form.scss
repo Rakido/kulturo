@@ -125,5 +125,17 @@ label {
 
 .icon {
   // display: flex;
+   margin-left: -10px;
+  margin-top: -5px;
   align-items: center;
+}
+
+.icon-duration {
+ 
+}
+
+.row-fixed {
+  position: absolute;
+  bottom: 36px;
+  width: 100%;
 }
