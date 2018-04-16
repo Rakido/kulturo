@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415132739) do
+ActiveRecord::Schema.define(version: 20180416083239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "content_id"
+    t.index ["content_id"], name: "index_bookmarks_on_content_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
 
   create_table "contents", force: :cascade do |t|
     t.string "kind"
@@ -50,4 +57,6 @@ ActiveRecord::Schema.define(version: 20180415132739) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "contents"
+  add_foreign_key "bookmarks", "users"
 end

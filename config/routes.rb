@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   end
 
   resources :contents, only: [:index, :show] do
-  #   # test de sauvegarde d'un contenu
-  #   resources :saved_contents, only: [:new, :create]
-  # end
+    resources :bookmarks, only: [:create]
+  end
+
+  resources :bookmarks, only: [:destroy]
 
   resource :profile, only: [:show, :edit, :update]
-
+  
 end

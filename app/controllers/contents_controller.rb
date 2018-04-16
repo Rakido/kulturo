@@ -1,15 +1,17 @@
 class ContentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     search      = Youtube::Search.new(youtube_channels_ids, duration_range)
     videos_data = search.call
 
     @contents   = videos_data.map { |video_data| Content.create!(video_data) }
   end
-  
+
   def show
     @content = Content.find(params[:id])
   end
-  
+
   private
 
   def duration_range
