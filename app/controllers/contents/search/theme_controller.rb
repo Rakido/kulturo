@@ -1,5 +1,5 @@
 class Contents::Search::ThemeController < ApplicationController
-
+  skip_before_action :authenticate_user!
   def show
     @themes = Content::THEMES
   end

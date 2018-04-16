@@ -1,4 +1,5 @@
 class Contents::Search::DurationController < ApplicationController
+  skip_before_action :authenticate_user!
 
   def show
     @durations = Content::DURATIONS

@@ -1,4 +1,6 @@
 class Content < ApplicationRecord
+  has_many :bookmarks
+
   DURATIONS = [5, 10, 15, 30]
   KINDS = %w(video article podcast)
   THEMES = %w(politics society economics arts environment sciences technology history)

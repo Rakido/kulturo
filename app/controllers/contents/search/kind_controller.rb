@@ -1,5 +1,5 @@
 class Contents::Search::KindController < ApplicationController
-
+  skip_before_action :authenticate_user!
   def show
     @kinds = Content::KINDS
   end

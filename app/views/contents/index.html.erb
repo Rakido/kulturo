@@ -1,60 +1,23 @@
-<!-- <div class="background">
-<% results = Content.last(3) %>
-
-  <div class="search-head">
-    <div class="flex-large search-title">Vos résultats</div>
-    <div class="underline"></div>
-  </div>
-  <div class="main-carousel">
-    <% results.each do |result| %>
-      <div class="carousel-cell">
-          <%= link_to content_path(result) do %>
-            <div class="card">
-              <div class="card-image">
-                <iframe width="100%" height="260" src="https://www.youtube.com/embed/<%=result.url.last(11)%>?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen showinfo="0"></iframe>
-              </div>
-              <div class="card-content text-center">
-                <div class="nav-cap">
-                  <%= result.source.capitalize %>
-                </div>
-                <h3 class="card-title">
-                  <%= result.title %>
-                </h3>
-
-                <div class="card-description body-small">
-                  <%= truncate(result.description, length: 150) %>
-                </div>
-
-            </div>
+<div class="carousel" data-flickity>
+  <% contents = Content.last(3) %>
+  <% contents.each do |content| %>
+    <div class="carousel-cell-contents">
+      <%= link_to content_path(content) do %>
+      <div class="card">
+        <div class="card-image">
+          <iframe width="100%" height="260" src="https://www.youtube.com/embed/<%=content.url.last(11)%>?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen showinfo="0"></iframe>
+        </div>
+        <div class="card-content text-center">
+          <div class="nav-cap">
+            <%= content.source.capitalize %>
           </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div> -->
-<div class="background">  
-  <div class="carousel" data-flickity>
-    <% results = Content.last(3) %>
-    <% results.each do |result| %>
-      <div class="carousel-cell-contents">
-        <%= link_to content_path(result) do %>
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag(result.image_url) %>
+          <h3 class="card-title">
+            <%= content.title %>
+          </h3>
+          <div class="card-description body-small">
+            <%= truncate(content.description, length: 150) %>
           </div>
-          <div class="card-content text-center">
-            <div class="nav-cap nav-cap-card">
-              <%= result.source.capitalize %>
-            </div>
-            <div class="underline underline-card"></div>
-            <h3 class="card-title">
-              <%= result.title %>
-            </h3>
-            <div class="underline underline-card"></div>
-            <div class="card-description body-small">
-              <%= truncate(result.description, length: 110) %>
-            </div>
-          </div>
+          <%= link_to 'Bookmark', content_bookmarks_path(content), method: :post %>
         </div>
       <% end %>
     </div>
