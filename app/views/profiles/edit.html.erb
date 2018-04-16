@@ -1,0 +1,50 @@
+<div class="background">
+  <div class="container">
+    <div class="col-xs-12 col-sm-6 text-center">
+      <%= simple_form_for @profile, url: profile_path do |f| %>
+
+      <%= cl_image_tag current_user.avatar, height: 48, width: 48, crop: :fill, class: "avatar-pics" %>
+
+      <h4 class="primary-text"><%=current_user.first_name %> <%= current_user.last_name %></h4>
+
+      <div class="underline" style="margin-top: 80px; margin-bottom: 4vh;"></div>
+      <!-- formulaire de modification -->
+
+        <%= f.input :email, label: "Adresse email", placeholder: "jimihendrix@gmail.com"%>
+        <%= f.input :first_name, label: "Prénom", placeholder: "Anatole"%>
+        <%= f.input :last_name, label: "Nom", placeholder: "Gonon"%>
+        <%= f.input :avatar, label: "Photo de profil" %>
+
+        <div id="preview" style="width:30px; height:30px;">
+        <img src="http://saveabandonedbabies.org/wp-content/uploads/2015/08/default-300x169.png" alt>
+
+          <script src="http://code.jquery.com/jquery-3.1.0.min.js"
+          integrity="shaa256-cCueBR6CsyA4/9szpPfrX3s49M9vUU58gtiJj06wt/s="
+          crossorigin="anonymous">
+          </script>
+
+           <script type="text/javascript">
+            function readURL(input){
+             if(input.files && input.files[0]){
+              var reader = new FileReader();
+              reader.onload = function(e){
+               $('#preview img').attr('src', e.target.result);
+              };
+              reader.readAsDataURL(input.files[0]);
+             }
+            }
+            $(document).on('change','input[type="file"]',function(){
+             readURL(this);
+            });
+           </script>
+        </div>
+        <%= f.submit 'Mise à jour', class: 'btn show-cta cta-input'%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
