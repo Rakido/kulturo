@@ -3,9 +3,9 @@ class ContentsController < ApplicationController
 
   def index
     search      = Youtube::Search.new(youtube_channels_ids, duration_range)
-    videos_data = search.call
-
-    @contents   = videos_data.map { |video_data| Content.create!(video_data) }
+    videos      = search.call.flatten
+    selected_videos = videos.sample(3)
+    @contents   = selected_videos.map { |video| Content.create!(video) }
   end
 
   def show
@@ -36,7 +36,7 @@ class ContentsController < ApplicationController
   def youtube_channels_ids
     # binding.pry
     # Faire le matching entre le choix du user et le channel ID avec notre hash
-    Content::THEMES_CHANNELS_MAPPING[theme].first
-    # binding.pry
+    Content::THEMES_CHANNELS_MAPPING[theme]
+    
   end
 end

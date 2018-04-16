@@ -1,15 +1,11 @@
 .carousel {
-  background: #EEE;
+  background: transparent;
 }
 
 .carousel-cell {
   width: 100%;
   height: 100vh;
 
-  background-image: linear-gradient(-157deg, #667EEA 0%, #764BA2 100%) !important; 
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
-  // counter-increment: gallery-cell;
 }
 
 .carousel-cell:before {
@@ -22,15 +18,14 @@
 }
 
 .carousel-cell-contents {
-  width: 80%;
+  width: 100vw;
   height: 100vh;
-  margin-right: 32px;
-  background-image: linear-gradient(-157deg, #667EEA 0%, #764BA2 100%) !important; 
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
-  // counter-increment: gallery-cell;
 }
 
 .flickity-button {
   display:none;
+}
+
+.flickity-page-dots {
+  bottom: 150px !important;
 }
