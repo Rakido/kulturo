@@ -1,0 +1,22 @@
+<div class="background">
+  <div class="container">
+
+    <h4 class="sign-subtitle">Rejoignez la communauté</h4>
+    <div class="modal-body form-inputs text-left">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+        <%= f.input :email, required: true, autofocus: true, placeholder: 'adresse@gmail.com' %>
+        <%= f.input :password, required: true, placeholder: 'Mot de passe' %>
+        <%= f.input :password_confirmation, required: true, placeholder: 'Confirmer le mot de passe', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Inscription", class: "button-cta button-cta-sign" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
