@@ -5,4 +5,9 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # Cloudinary, avatar upload
+  mount_uploader :avatar, PhotoUploader
+
+
 end

@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookmarks, only: [:destroy]
+
+  resource :profile, only: [:show, :edit, :update]
+  
 end

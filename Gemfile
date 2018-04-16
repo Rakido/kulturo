@@ -13,6 +13,8 @@ gem 'redis'
 gem 'jquery'
 gem 'yt'
 gem 'greensock-rails'
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

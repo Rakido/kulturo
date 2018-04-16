@@ -1,0 +1,7 @@
+meta_product_name: "Kulturo"
+meta_title: "Kulturo - Simplifie la recherche de contenus culturels"
+meta_description: "Kulturo simplifie la recherche de contenus culturels sous forme de vidéos, articles ou podcasts.
+Ne vous perdez plus dans les méandres de l'Internet.
+Indiquez le temps dont vous disposez,vos préférences et Kulturo-vous!"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@TaskinHaydar1"   # required for Twitter Cards
