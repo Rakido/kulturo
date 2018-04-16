@@ -1,9 +1,9 @@
-<div class="background">  
+<div class="background">
   <div class="container">
     <div class="form-group text-center">
       <div class="row text-center">
         <div class="search-head">
-            <div class="flex-large search-title">Pick a kind</div>
+            <div class="flex-large search-title">Un format</div>
             <div class="underline"></div>
         </div>
       </div>
@@ -16,8 +16,8 @@
               <label for="kind_<%= index %>">
                 <div class="category-choice">
                   <div class="icon">
-                    <%= image_tag "contents/kind-pictos/kind-#{kind}.svg", class: "category-icon" %>              
-                  </div> 
+                    <%= image_tag "contents/kind-pictos/kind-#{kind}.svg", class: "category-icon" %>
+                  </div>
                   <div class="step-choice">
                     <%= kind_naming(kind) %>
                   </div>
@@ -30,9 +30,9 @@
 
           <div class="col-xs-6">
             <%= submit_tag 'Save', class: 'btn btn-primary btn-cta col-xs-12', id: 'button-kind' %>
-            <i class="fa fa-chevron-right nav-icon"></i>    
-          </div>    
-        <% end %> 
+            <i class="fa fa-chevron-right nav-icon"></i>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
