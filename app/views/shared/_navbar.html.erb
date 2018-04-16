@@ -4,8 +4,6 @@
     <%= image_tag "logo.png", height: 35 %>
   <% end %>
 
-
-
   <!-- Central Navigation -->
 
   <!-- Right Navigation -->
@@ -14,7 +12,6 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -59,9 +56,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <%= link_to t(".sign_up", default: "Signup"), '#', "data-toggle" => "modal", "data-target"=>"#modaldevise-sign", class: "navbar-wagon-item navbar-wagon-link" %>
+        
+        <%= link_to t(".sign_in", default: "Login"), '#', "data-toggle" => "modal", "data-target"=>"#modaldevise", class: "navbar-wagon-item navbar-wagon-link text-cta" %>
+        
       </ul>
     </div>
   </div>

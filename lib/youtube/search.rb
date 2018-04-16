@@ -1,33 +1,35 @@
 module Youtube
   class Search
-    def initialize(channel_id, duration_range)
-      @channel_id     = channel_id
-      @duration_range = duration_range
+    def initialize(channels_ids, duration_range)
+      @channels_ids     = channels_ids
+      @duration_range   = duration_range
     end
 
     def call
-      channel = Yt::Channel.new id: @channel_id
 
-      ordered_videos_by_view_count = channel.videos.where(
-        order: 'viewCount',
-        video_definition: 'high',
-        video_embeddable: true,
-      )
+      @channels_ids.map do |id|
+        channel = Yt::Channel.new id: id
 
-      selected_videos = select_30_matching_videos(ordered_videos_by_view_count)
+        ordered_videos_by_view_count = channel.videos.where(
+          order: 'viewCount',
+          video_definition: 'high',
+          video_embeddable: true,
+        )
 
-      return selected_videos.map do |video|
-        {
-          kind:             'video',
-          duration:         video.length,
-          title:            video.title,
-          theme:            video.video_category.title,
-          source:           'youtube',
-          url:              "https://www.youtube.com/watch?v=#{video.id}",
-          image_url:        video.thumbnail_url,
-          publication_date: video.published_at,
-          description:      video.description,
-        }
+        selected_videos = select_30_matching_videos(ordered_videos_by_view_count)
+        selected_videos.map do |video|
+          {
+            kind:             'video',
+            duration:         video.length,
+            title:            video.title,
+            theme:            video.video_category.title,
+            source:           'youtube',
+            url:              "https://www.youtube.com/watch?v=#{video.id}",
+            image_url:        video.thumbnail_url,
+            publication_date: video.published_at,
+            description:      video.description,
+          }
+        end
       end
     end
 
@@ -50,9 +52,7 @@ module Youtube
     end
 
     def valid_video?(video)
-      duration_in_range(video)
-      # && has_enough_views(video)
-      # && good_ratio_likes_dislikes(video)
+      duration_in_range(video) && has_enough_views(video) && good_ratio_likes_dislikes(video)
     end
 
     def duration_in_range(video)
