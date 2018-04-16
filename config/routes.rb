@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contents, only: [:index, :show]
+  resources :contents, only: [:index, :show] do
+    resources :bookmarks, only: [:create]
+  end
+
+  resources :bookmarks, only: [:destroy]
 end
