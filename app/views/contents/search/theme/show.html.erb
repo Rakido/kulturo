@@ -6,7 +6,7 @@
             <div class="flex-large search-title">Pick a theme</div>
             <div class="underline"></div>
         </div>
-      </div>
+      </div> 
     </div>
     <div class="row">
       <div class="category-choices text-center">
@@ -14,12 +14,14 @@
           <% @themes.each_with_index do |theme, index| %>
             <div class="col-xs-6">
               <label for="theme_<%= index %>">
-                <div class="theme-choice" style="display:block !important">
-                  <div class="icon">
-                    <%= image_tag "contents/theme-pictos/theme-#{theme}.svg", class: "category-icon" %>              
-                  </div>
-                  <div class="step-choice">
-                    <%= theme_naming(theme) %>
+                <div class="theme-choice">
+                  <div class="content-card-theme">
+                    <div class="icon">
+                      <%= image_tag "contents/theme-pictos/theme-#{theme}.svg", class: "category-icon" %>              
+                    </div>
+                    <div class="step-choice-theme">
+                      <%= theme_naming(theme) %>
+                    </div>
                   </div>
                 </div>
               </label>

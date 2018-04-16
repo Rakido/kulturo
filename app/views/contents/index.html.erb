@@ -1,3 +1,5 @@
+<div class="background">
+
 <div class="carousel" data-flickity>
   <% contents = Content.last(3) %>
   <% contents.each do |content| %>
@@ -5,7 +7,7 @@
       <%= link_to content_path(content) do %>
       <div class="card">
         <div class="card-image">
-          <iframe width="100%" height="260" src="https://www.youtube.com/embed/<%=content.url.last(11)%>?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen showinfo="0"></iframe>
+          <%= image_tag(content.image_url) %>
         </div>
         <div class="card-content text-center">
           <div class="nav-cap">
@@ -15,16 +17,22 @@
             <%= content.title %>
           </h3>
           <div class="card-description body-small">
-            <%= truncate(content.description, length: 150) %>
+            <%= truncate(content.description, length: 60) %>
           </div>
-          <%= link_to 'Bookmark', content_bookmarks_path(content), method: :post %>
+          <%= link_to content_bookmarks_path(content), method: :post, class: "card-icon-social" do %>
+            <i class="fa fa-bookmark"></i>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 </div>
-  <div class="col-xs-6">
-    <%= submit_tag 'Home?', class: 'btn btn-primary btn-cta col-xs-12', id: 'button-duration' %>
-    <i class="fa fa-chevron-right nav-icon"></i>    
-  </div>    
+<div class="col-xs-6">
+      <%= submit_tag 'Home?', class: 'btn btn-primary btn-cta col-xs-12', id: 'button-duration' %>
+      <i class="fa fa-chevron-right nav-icon"></i>    
+    </div> 
+
 </div>
+
+  

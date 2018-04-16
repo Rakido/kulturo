@@ -6,14 +6,15 @@ class Content < ApplicationRecord
   THEMES = %w(politics society economics arts environment sciences technology history)
 
   THEMES_CHANNELS_MAPPING = {
-    politics:     ['UC9hHeywcPBnLglqnQRaNShQ','UCVeMw72tepFl1Zt5fvf9QKQ'],
-    society:      ['UCZaT_X_mc0BI-djXOlfhqWQ'],
-    economics:    ['UCIALMKvObZNtJ6AmdCLP7Lg'],
-    environment:  ['UCpVm7bg6pXKo1Pr6k5kxG9A'],
-    sciences:     ['UC5X4e8ScZI2AFd_vkjSoyoQ','UCjsHDXUU3BjBCG7OaCbNDyQ'],
-    technology:   ['UCXGgrKt94gR6lmN4aN3mYTg'],
-    history:      ['UC510QYlOlKNyhy_zdQxnGYw'],
-    arts:         ['UC9CswYtb5rL31CHwyVoyJvQ']
+    politics:     ['UCAcAnMF0OrCtUep3Y4M-ZPw','UCVeMw72tepFl1Zt5fvf9QKQ','UCALQmB6ug_RUYac5yrtKfXg','UCdnaDhU-LDQrIEEmSIfq0-Q'],
+    society:      ['UC1yLBhh8eDSPm-_Hgz8AvNA','UCwWCBw7M0kskNlv0coVP53w','UCGeFgMJfWclTWuPw8Ok5FUQ','UCHQda5vLxrH0Ff0I0kMq4zw'],
+    economics:    ['UC7sXGI8p8PvKosLWagkK9wQ','UCyJDHgrsUKuWLe05GvC2lng','UChZWs6PJY0hND384d2_RrhQ','UCtbPu7ZHD5mWBtej5Tx4xWw'],
+    environment:  ['UC5Twj1Axp_-9HLsZ5o_cEQQ','UC6dMVNhZmJYFf7SPv1WLMuQ'],
+    sciences:     ['UCcziTK2NKeWtWQ6kB5tmQ8Q','UCeR8BYZS7IHYjk_9Mh5JgkA'],
+    technology:   ['UCNiauGTV7XhkOpUAIXod4xA'],
+    history:      ['UC5Twj1Axp_-9HLsZ5o_cEQQ','UC_iuTGIGPWQBLGbd_TgwB-Q','UCP46_MXP_WG_auH88FnfS*1A','UCKjDY4joMPcoRMmd-G1yz1Q'],
+    arts:         ['UCafm6w_rPndqAtokQy04Jdw','UCzi49Gp-XX9m5foHOWWGKeA','UCqeQl48e0r-M30d_EVWfA2Q']
   }
 end
+
 

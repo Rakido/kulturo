@@ -12,10 +12,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 })
 import  { activateUserChoice } from "../components/active";
-import  { animateCategories } from "../components/animationchoices";
+import  { animateCategories, animateTitle, animateLine, animateTheme } from "../components/animationchoices";
 import { switchPageAnimationDuration, switchPageAnimationKind } from "../components/switch-animation";
 activateUserChoice(); 
 animateCategories(); 
+animateTitle();
+animateLine();
+animateTheme();
 switchPageAnimationDuration(); 
 switchPageAnimationKind();
 

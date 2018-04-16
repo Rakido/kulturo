@@ -27,13 +27,18 @@
   margin: 20px 0;
 }
 .step-choice {
-  font-family: "Brown";
   font-size: 18px;
   line-height: 25px;
   text-shadow: 0 1px 1px rgba(4,11,173,0.20);
   padding-left: 12px;
 }
 
+.step-choice-theme {
+  font-size: 18px;
+  line-height: 25px;
+  text-shadow: 0 1px 1px rgba(4,11,173,0.20);
+  padding-left: 0px;
+}
 
 .category-choice {
   height:75px;
@@ -74,6 +79,7 @@
   flex: 0 0 30%;
   display:flex;
   align-items: center;
+  justify-content:center;
   // justify-content: space-around;
   &:hover {
     background:rgba(255, 255, 255, 0.25);
@@ -120,6 +126,6 @@ label {
 }
 
 .icon {
-  display: flex;
+  // display: flex;
   align-items: center;
 }

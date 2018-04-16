@@ -6,6 +6,7 @@ function switchPageAnimationDuration() {
     
       setTimeout(function() {
         TweenMax.staggerTo('.category-choice', 0.3, {opacity:0, x:-200, delay:0,  ease:new Ease(Power3(0.25, 0.1, 0.0, 1.0))}, 0.15,);
+     
           setTimeout(function(){
             document.querySelector(".content-duration-form").submit();
           }, 800);
