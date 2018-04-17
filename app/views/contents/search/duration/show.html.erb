@@ -8,36 +8,27 @@
         </div>
       </div>
     </div>
-    <%= form_tag contents_search_duration_path do %>
-      <div class="row">
-        <div class="category-choices">
-          <div class="col-xs-12">
-            <% @durations.each_with_index do |duration, index| %>
-              <div class="col-xs-12">
-                <label for="duration_<%= index %>">
-                  <div class="category-choice">
-                    <div class="icon">
-                      <%= image_tag "contents/duration-pictos/duration-#{duration}.svg", class: "category-icon" %>
-                    </div>
-                    <div class="step-choice">
-                      <%= duration_naming(duration) %>
-                    </div>
-                  </div>
-                </label>
-                <input type="radio" class="hidden" value="<%= duration %>" name="duration" id="duration_<%= index %>">
+
+    <div class="row">
+      <div class="category-choices">
+        <div class="col-xs-12">
+          <% @durations.each do |duration| %>
+            <div class="col-xs-12">
+              <%= link_to contents_search_duration_path(duration: duration), method: :post do %>
+              <div class="category-choice">
+                <div class="icon">
+                  <%= image_tag "contents/duration-pictos/duration-#{duration}.svg", class: "category-icon" %>
+                </div>
+                <div class="step-choice">
+                  <%= duration_naming(duration) %>
+                </div>
               </div>
-            <% end %>
-          </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
-      <div class="row row-fixed">
-        <div class="col-xs-6 col-xs-offset-3">
-          <%= button_tag type: 'submit', class: 'btn btn-primary btn-cta btn-block' do %>
-          Save
-          <%= image_tag "contents/next.svg", class: 'icon-navbar icon-button' %>
-          <% end %>
-        <% end %>
-      </div>
     </div>
+
   </div>
 </div>

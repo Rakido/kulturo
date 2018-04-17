@@ -14,6 +14,7 @@
           <div class="col-xs-12">
             <% @kinds.each_with_index do |kind, index| %>
               <div class="col-xs-12">
+                <%= link_to contents_search_kind_path(kind: kind), method: :post do %>
                 <label for="kind_<%= index %>">
                   <div class="category-choice">
                     <div class="icon">
@@ -24,6 +25,7 @@
                     </div>
                   </div>
                 </label>
+                <% end %>
                 <input type="radio" class="hidden" value="<%= kind %>" name="kind" id="kind_<%= index %>">
               </div>
             <% end %>
@@ -32,10 +34,6 @@
       </div>
       <div class="row row-fixed">
         <div class="col-xs-6 col-xs-offset-3">
-          <%= button_tag type: 'submit', class: 'btn btn-primary btn-cta btn-block' do %>
-          Save
-          <%= image_tag "contents/next.svg", class: 'icon-navbar icon-button' %>
-          <% end %>
         <% end %>
       </div>
     </div>

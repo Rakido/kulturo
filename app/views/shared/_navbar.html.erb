@@ -1,8 +1,15 @@
 <div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
-  <%= link_to root_path, class: "icon-navbar" do %>
-    <%= image_tag "contents/previous.svg" %>
+
+
+  <% unless current_page?(root_path) %>
+    <%= link_to :back, class: "icon-navbar" do %>
+      <%= image_tag "contents/previous.svg" %>
+    <% end %>
   <% end %>
+
+
+  <%# link_to 'Back', :back %>
 
 
   <!-- Right Navigation -->

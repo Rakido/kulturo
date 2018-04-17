@@ -14,6 +14,7 @@
           <div class="col-xs-12">
             <% @themes.each_with_index do |theme, index| %>
               <div class="col-xs-6">
+                <%= link_to contents_search_theme_path(theme: theme), method: :post do %>
                 <label for="theme_<%= index %>">
                   <div class="theme-choice">
                     <div class="content-card-theme">
@@ -26,6 +27,7 @@
                     </div>
                   </div>
                 </label>
+                <% end %>
                 <input type="radio" class="hidden" value="<%= theme %>" name="theme" id="theme_<%= index %>">
               </div>
             <% end %>
@@ -34,7 +36,7 @@
       </div>
       <div class="row row-fixed">
         <div class="col-xs-6 col-xs-offset-3">
-          <%= submit_tag 'Save', class: 'btn btn-primary btn-cta btn-block' do %>
+          <%= submit_tag 'Random', class: 'btn btn-primary btn-cta btn-block' do %>
             <%= image_tag "contents/next.svg", class: 'icon-navbar icon-button' %>
           <% end %>
         <% end %>
