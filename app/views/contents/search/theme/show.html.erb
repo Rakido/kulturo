@@ -3,8 +3,8 @@
     <div class="form-group text-center">
       <div class="row text-center">
         <div class="search-head">
-            <div class="flex-large search-title">Un thème </div>
-            <div class="underline"></div>
+          <div class="flex-large search-title">Un thème </div>
+          <div class="underline underline-title"></div>
         </div>
       </div>
     </div>
@@ -34,9 +34,8 @@
       </div>
       <div class="row row-fixed">
         <div class="col-xs-6 col-xs-offset-3">
-          <%= button_tag type: 'submit', class: 'btn btn-primary btn-cta btn-block' do %>
-          Save
-          <i class="fa fa-chevron-right nav-icon"></i>
+          <%= submit_tag 'Save', class: 'btn btn-primary btn-cta btn-block' do %>
+            <%= image_tag "contents/next.svg", class: 'icon-navbar icon-button' %>
           <% end %>
         <% end %>
       </div>

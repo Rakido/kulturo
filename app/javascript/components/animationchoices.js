@@ -1,10 +1,11 @@
-import {TweenMax, Power3} from "gsap";
+import {TweenMax, Power3, Power4} from "gsap";
 
 function animateCategories() {
   // element = document.querySelectorAll('.category-choice');
   // element.style.x = 600;
   // document.querySelectorAll('category-choice').style.opacity = 0;
-  TweenMax.staggerFrom('.category-choice', 0.4, {opacity:0, x:500, ease: Power3.easeOut, delay: 0.5}, 0.15);
+  TweenMax.staggerFrom('.category-choice', 0.3, {opacity:0, x:500, ease: Power3.easeOut, delay: 0.2}, 0.15);
+  TweenMax.from('.btn', 0.250, { opacity:0, ease: Power4.easeOut, delay: 1.2});
 }
 
 function animateTheme() {
