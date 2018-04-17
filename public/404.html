@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <title>Aïe Aïe Aïe</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <style>
     .my-error-page {
-      background-color: #6fddbb;
-      color: #6c72c1;
+      background-image: linear-gradient(-157deg, #667EEA 0%, #764BA2 100%) !important;
+      color: #6fddbb;
       text-align: center;
-      font-family: Courier, monospace;
-      margin: 70px;
+      font-family: Brown-Bold, Helvetica;
+      margin: 30px;
     }
 
     .big-h1 {
@@ -23,15 +24,15 @@
     }
 
     .dialog {
-      background-color: #6fddbb;
+
       border-radius: 5px;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.);
       padding: 10px;
-      border: 2px dashed #6c72c1;
+      /*border: 2px dashed #6c72c1;*/
     }
 
-    .skull {
-      height: 200px;
+    .bomb {
+      height: 250px;
       color: ;
     }
 
@@ -49,6 +50,21 @@
 
     }
 
+    .btn-cta {
+        font-family: "Brown-Bold";
+        bottom: 32px;
+        height: 48px;
+        background-image: linear-gradient(-136deg, #69DFB1 0%, #8FD3F4 100%);
+        box-shadow: 0 4px 20px 0 rgba(4, 11, 173, 0.3);
+        border-radius: 8px !important;
+        color: #715AB7;
+        line-height: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 1px 0 rgba(167, 255, 239, 0.2);
+        padding-top: 12px;
+    }
+
   </style>
 
 </head>
@@ -59,18 +75,18 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <img src="/error-pictos/skull.svg", class="skull">
-      <h2>Vous y voilà, chenapan!</h2>
+      <img src="/error-pictos/bomb.svg", class="bomb">
+      <h1>404</h1>
 
-      <p>Bravo, vous avez cassé notre site *.</p>
+      <h2>Bravo, vous avez cassé notre site !</h2>
     </div>
-    <p>On tient quand même à vous offrir un petit bonus.</p>
+    <p>Mais non, on rigole</p>
   </div>
 </body>
-<p>non, c'est une blague</p>
+
 
 <div>
-<a href="https://kulturo.me", class="button">On oublie tout </a>
+<a href="https://kulturo.me", class="btn btn-primary btn-cta">On oublie tout </a>
 </div>
 </html>
 
