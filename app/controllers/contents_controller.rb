@@ -2,10 +2,7 @@ class ContentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    search      = Youtube::Search.new(youtube_channels_ids, duration_range)
-    videos      = search.call.flatten
-    selected_videos = videos.sample(3)
-    @contents   = selected_videos.map { |video| Content.create!(video) }
+    @contents = Content.where(duration: duration_range, kind: session[:kind], theme: theme).sample(3)
   end
 
   def show
@@ -19,24 +16,24 @@ class ContentsController < ApplicationController
 
     case session[:duration].to_i
     when 30
-      (26..32)
+      (26* 60)..(32* 60)
     when 15
-      (14..18)
+      (14 * 60)..(18* 60)
     when 10
-      (8..12)
+      (8 * 60)..(12 *60)
     when 5
-      (4..6)
+      (4* 60)..(6* 60)
     end
   end
 
   def theme
-    session[:theme].to_sym
+    session[:theme]
   end
 
   def youtube_channels_ids
     # binding.pry
     # Faire le matching entre le choix du user et le channel ID avec notre hash
     Content::THEMES_CHANNELS_MAPPING[theme]
-    
+
   end
 end
