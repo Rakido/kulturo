@@ -1,5 +1,5 @@
 class Content < ApplicationRecord
-  has_many :bookmarks
+  has_many :bookmarks, dependent: :destroy
 
   DURATIONS = [5, 10, 15, 30]
   KINDS = %w(video article podcast)
