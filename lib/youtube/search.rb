@@ -1,6 +1,7 @@
 module Youtube
   class Search
     def initialize(channel_id)
+      puts "Handling channel with id: #{channel_id}"
       @channel_id = channel_id
     end
 
@@ -35,6 +36,7 @@ module Youtube
       full_data_videos = []
 
       videos.each do |video|
+        puts "Handling video with id: #{video.id}"
         full_data_video = Yt::Video.new(id: video.id)
 
         if valid_video?(full_data_video)
@@ -50,7 +52,7 @@ module Youtube
     end
 
     def has_enough_views(video)
-      video.view_count > 50_000
+      video.view_count.to_i > 50_000
     end
 
     def good_ratio_likes_dislikes(video)
