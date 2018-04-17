@@ -31,9 +31,7 @@ class ContentsController < ApplicationController
   end
 
   def youtube_channels_ids
-    # binding.pry
     # Faire le matching entre le choix du user et le channel ID avec notre hash
     Content::THEMES_CHANNELS_MAPPING[theme]
-
   end
 end
