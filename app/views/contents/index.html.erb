@@ -12,29 +12,61 @@
   <div class="carousel" data-flickity>
     <% @contents.each do |content| %>
       <div class="carousel-cell-contents">
-        <%= link_to content_path(content) do %>
-          <div class="card">
-            <div class="card-image">
-              <%= image_tag(content.image_url) %>
-            </div>
-            <div class="card-content text-center">
-              <div class="nav-cap nav-cap-card">
-                <%= content.source.capitalize %>
+
+        <% if content.kind == "video" %>
+          <%= link_to content_path(content) do %>
+
+
+            <div class="card">
+              <div class="card-image">
+                <%= image_tag(content.image_url) %>
               </div>
-              <div class="underline"></div>
-              <h3 class="card-title">
-                <%= content.title %>
-              </h3>
-              <div class="underline"></div>
-              <div class="card-description body-small">
-                <%= truncate(content.description, length: 100) %>
+              <div class="card-content text-center">
+                <div class="nav-cap nav-cap-card">
+                  <%= content.source.capitalize %>
+                </div>
+                <div class="underline"></div>
+                <h3 class="card-title">
+                  <%= content.title %>
+                </h3>
+                <div class="underline"></div>
+                <div class="card-description body-small">
+                  <%= truncate(content.description, length: 100) %>
+                </div>
+                <%= link_to content_bookmarks_path(content), method: :post, class: "card-icon-social" do %>
+                  <i class="fa fa-bookmark-o"></i>
+                <% end %>
               </div>
-              <%= link_to content_bookmarks_path(content), method: :post, class: "card-icon-social" do %>
-                <i class="fa fa-bookmark-o"></i>
-              <% end %>
             </div>
-          </div>
+          <% end %>
+        <% else %>
+        <!-- open article with url -->
+          <%= link_to content.url, target:"_blank" do %>
+            <div class="card">
+              <div class="card-image">
+                <%= image_tag(content.image_url) %>
+              </div>
+              <div class="card-content text-center">
+                <div class="nav-cap nav-cap-card">
+                  <%= content.source.capitalize %>
+                </div>
+                <div class="underline"></div>
+                <h3 class="card-title">
+                  <%= content.title %>
+                </h3>
+                <div class="underline"></div>
+                <div class="card-description body-small">
+                  <%= truncate(content.description, length: 100) %>
+                </div>
+                <%= link_to content_bookmarks_path(content), method: :post, class: "card-icon-social" do %>
+                  <i class="fa fa-bookmark-o"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+
         <% end %>
+
       </div>
     <% end %>
   </div>
@@ -45,4 +77,4 @@
   </div>
 </div>
 
-  
+
