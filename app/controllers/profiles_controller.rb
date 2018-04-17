@@ -1,13 +1,10 @@
 class ProfilesController < ApplicationController
-  # def show
-  #   @instruments = current_user.instruments
-
-  #   @pending_demands = current_user.demands.where(status: "pending")
-  #   # binding.pry
-  #   @accepted_demands = current_user.demands.where(status: "accepted")
-  #   @reservations = current_user.reservations
-
-  # end
+  def show
+    # @bookmarks = current_user.bookmarks
+    # @contents = @bookmarks.each { |bookmark| Content.where(params[bookmark.content_id]) }
+    # binding.pry
+    @bookmarked_contents = current_user.bookmarked_contents
+  end
 
   def edit
     @profile = current_user

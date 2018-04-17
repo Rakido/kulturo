@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin: 16px 0;
 }
 .step-choice {
   font-size: 18px;
@@ -132,6 +132,10 @@ label {
 
 .icon-duration {
  
+}
+
+.underline-title {
+  width: 100% !important;
 }
 
 .row-fixed {
