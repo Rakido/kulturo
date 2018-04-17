@@ -1,0 +1,59 @@
+.background-secondary {
+  background-color: rgba(102,126,234, 0.06);
+  width:100vw;
+  height:100vh;
+  position:fixed;
+  top:0px;
+  left:0px;
+  padding-top:26px;
+}
+
+.connexion-title {
+  color: rgba(0,0,0,0.77);
+  text-shadow: 0 1px 1px rgba(255,255,255,0.20);
+}
+
+input {
+  height:76px;
+  margin-bottom: 32px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.20);
+  border-radius: 6px;
+  width: 100%;
+  padding: 16px;
+  opacity: 0.7;
+}
+
+form a {
+  font-weight:lighter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.30);
+  text-shadow: 0 1px 1px #FFFFFF;
+}
+
+.connexion-h1 {
+  margin: 64px auto;
+  color: rgba(113,92,186, 0.87) !important;
+  letter-spacing: 0;
+  text-shadow: 0 1px 1px #FFFFFF;
+}
+
+
+.button-cta-connexion {
+  background-image: linear-gradient(-136deg, #6A74DC 0%, #7357B3 100%);
+  box-shadow: 0 4px 20px 0 rgba(4,11,173,0.30);
+  border-radius: 6px;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 2.77px;
+  text-shadow: 0 1px 0 #13078F;
+}
+
+.links-connection {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cta {
+  color: rgba(113,92,186, 1);
+}
