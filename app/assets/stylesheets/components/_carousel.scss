@@ -1,3 +1,16 @@
+@keyframes scaleDots { 
+  from { 
+    transform: scale(2);
+    opacity: 0; 
+    } 
+    to 
+    { 
+      transform: scale(1);
+      opacity: 1;  
+      }
+    }
+
+
 .carousel {
   background: transparent;
 }
@@ -11,7 +24,6 @@
 .carousel-cell:before {
   display: block;
   text-align: center;
-  // content: counter(gallery-cell);
   line-height: 200px;
   font-size: 80px;
   color: white;
@@ -27,5 +39,11 @@
 }
 
 .flickity-page-dots {
+  opacity: 0;
   bottom: 150px !important;
+  animation: scaleDots cubic-bezier(0.4, 0.0, 0.2, 1);
+  animation-delay: 2.2s;
+  animation-fill-mode: forwards;
+  animation-duration: 0.350s;
 }
+

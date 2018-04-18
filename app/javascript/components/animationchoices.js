@@ -4,15 +4,18 @@ function animateCategories() {
   // element = document.querySelectorAll('.category-choice');
   // element.style.x = 600;
   // document.querySelectorAll('category-choice').style.opacity = 0;
-  TweenMax.staggerFrom('.category-choice', 0.3, {opacity:0, x:500, ease: Power3.easeOut, delay: 0.2}, 0.15);
-  TweenMax.from('.btn', 0.250, { opacity:0, ease: Power4.easeOut, delay: 1.2});
+  TweenMax.staggerFrom('.category-choice', 0.3, {opacity:0, x:500, ease: Power3.easeInOut, delay: 0.2}, 0.15);
+  TweenMax.from('.btn', 0.450, { opacity:0, width:0, ease: Power3.easeInOut, delay: 1.6});
+  TweenMax.from('#home-title', 0.650, {y: 100, opacity: 0, ease: Power3.easeInOut});
+  TweenMax.from('#home-underline', 0.650, {width: 0, opacity: 0, ease: Power3.easeInOut, delay: 0.4});
+  TweenMax.from('.text-onboarding', 0.850, {y: 100, opacity: 0, ease: Power4.easeInOut, delay: 0.7}); 
 }
 
 function animateTheme() {
   // element = document.querySelectorAll('.category-choice');
   // element.style.x = 600;
   // document.querySelectorAll('.category-choice').style.opacity = 0;
-  TweenMax.staggerFrom('.theme-choice', 0.4, {opacity:0, x:500, ease: Power3.easeOut, delay: 0.5}, 0.15);
+  TweenMax.staggerFrom('.theme-choice', 0.4, {opacity:0, x:500, ease: Power3.easeInOut, delay: 0.5}, 0.15);
 }
 
 function animateTitle() {
