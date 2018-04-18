@@ -40,10 +40,11 @@
 
 .flickity-page-dots {
   opacity: 0;
-  bottom: 150px !important;
+  bottom: 140px !important;
   animation: scaleDots cubic-bezier(0.4, 0.0, 0.2, 1);
   animation-delay: 2.2s;
   animation-fill-mode: forwards;
   animation-duration: 0.350s;
 }
+
 

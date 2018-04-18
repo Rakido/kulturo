@@ -2,13 +2,13 @@ module ContentsHelper
   def duration_naming(duration)
     case duration
     when 5 
-      "Trois stations"
+      "Few stations"
     when 10
-      "Taxi !"
+      "Hep ! Taxi !"
     when 15
-      "Correspondance"
+      "Connection"
     when 30
-      "Transsibérien"
+      "Traffic jam"
     else 
       raise "Duration naming not implemented for #{duration}!"
     end
@@ -17,11 +17,11 @@ module ContentsHelper
   def kind_naming(kind)
     case kind
     when 'video' 
-      "Mieux que la télé !"
+      "Better than TV !"
     when 'article'
-      "Où sont mes lunettes ?"
+      "I feel for reading"
     when 'podcast'
-      "Un bon pote-cast"
+      "Audio bingo"
     else 
       raise "Kind naming not implemented for #{kind}!"
     end
@@ -30,11 +30,11 @@ module ContentsHelper
   def theme_naming(theme)
     case theme
     when 'politics' 
-      "Politique"
+      "Politics"
     when 'society'
-      "Société"
+      "Society"
     when 'economics'
-      "Économie"
+      "Economics"
     when 'arts' 
       "Arts"
     when 'environment'
@@ -42,7 +42,7 @@ module ContentsHelper
     when 'sciences'
       "Sciences"
     when 'technology'
-      "Technologie"
+      "Technology"
     when 'history'
       "History"
     else 
