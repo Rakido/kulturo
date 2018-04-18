@@ -9,6 +9,7 @@ function animateCategories() {
   TweenMax.from('#home-title', 0.650, {y: 100, opacity: 0, ease: Power3.easeInOut});
   TweenMax.from('#home-underline', 0.650, {width: 0, opacity: 0, ease: Power3.easeInOut, delay: 0.4});
   TweenMax.from('.text-onboarding', 0.8, {y: 100, opacity: 0, ease: Power4.easeInOut, delay: 0.7}); 
+  TweenMax.from('.svg-home', 0.8, {scale:3, opacity: 0, ease: Power4.easeInOut, delay: 0.6}); 
 }
 
 function animateTheme() {
