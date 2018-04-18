@@ -79,7 +79,7 @@
   flex: 0 0 30%;
   display:flex;
   align-items: center;
-  justify-content:center;
+  justify-content:space-around;
   // justify-content: space-around;
   &:hover {
     background:rgba(255, 255, 255, 0.25);
@@ -98,7 +98,7 @@ label {
 }
 
 .category-icon {
-  padding-left: 12px;
+
   // font-size:32px;
   fill: #FFF;
   opacity:.75;
@@ -106,9 +106,7 @@ label {
 }
 
 .btn-cta {
-  font-family:"Brown-Bold";
-  bottom: 32px;
-  height:48px;
+  padding: 13px 0 10px 0;
   background-image: linear-gradient(-136deg, #69DFB1 0%, #8FD3F4 100%);
   box-shadow: 0 4px 20px 0 rgba(4,11,173,0.30);
   border-radius: 8px !important;
@@ -125,13 +123,13 @@ label {
 
 .icon {
   // display: flex;
-   margin-left: -10px;
-  margin-top: -5px;
-  align-items: center;
+  //  margin-left: -10px;
+  // margin-top: -5px;
+  // align-items: center;
 }
 
 .icon-duration {
- 
+
 }
 
 .underline-title {
@@ -140,6 +138,6 @@ label {
 
 .row-fixed {
   position: absolute;
-  bottom: 36px;
+  bottom: 15px;
   width: 100%;
 }
