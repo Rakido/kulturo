@@ -2,7 +2,7 @@ function switchPageAnimationDuration() {
   const buttonsDuration = document.querySelectorAll('.category-choice');
   buttonsDuration.forEach((button) => {
    button.addEventListener('click', function(event) {
-      event.stopImmediatePropagation();
+    // event.stopImmediatePropagation();
 
     });
   });
