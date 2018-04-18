@@ -3,13 +3,13 @@
     <div class="form-group text-center">
       <div class="row text-center">
         <div class="search-head">
-          <div class="flex-large search-title">Et voilou</div>
+          <div class="flex-large search-title">Enjoy your <%= session[:kind] %></div>
           <div class="underline underline-title"></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="carousel" data-flickity>
+  <div class="carousel carousel-contents" data-flickity>
     <% @contents.each do |content| %>
       <div class="carousel-cell-contents">
 
@@ -31,11 +31,23 @@
                 </h3>
                 <div class="underline"></div>
                 <div class="card-description body-small">
-                  <%= truncate(content.description, length: 100) %>
+                  <%= truncate(content.description, length: 80) %>
                 </div>
-                <%= link_to content_bookmarks_path(content), method: :post, class: "card-icon-social" do %>
-                  <i class="fa fa-bookmark-o"></i>
-                <% end %>
+
+                <div class="card-footer">
+                  <%= link_to content_bookmarks_path(content), method: :post, class: "social-icons" do %>
+                    <div class="card-icon-social">
+                      <i class="fa fa-bookmark-o"></i>
+                    </div>
+                    <div class="nav-cap nav-cap-card">Bookmark</div>
+                  <% end %>
+                  <div class="social-icons">
+                   <div class="card-icon-social">
+                      <i class="fa fa-facebook"></i>
+                    </div>
+                    <div class="nav-cap nav-cap-card">Share</div>
+                  </div>
+                </div>
               </div>
             </div>
           <% end %>

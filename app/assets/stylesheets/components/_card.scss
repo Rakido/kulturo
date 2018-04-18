@@ -2,7 +2,6 @@
   background: rgba(255,255,255,0.1);
   box-shadow: 0 12px 14px 0 rgba(0,0,0,0.20);
   border-radius: 6px;
-  height:70vh;
   width: 279px;
   margin: 30px auto;
 }
@@ -27,8 +26,8 @@
 }
 
 .card-description {
-  padding-bottom: 32px;
-  font-family: "Arnhem";
+  padding-bottom: 24px;
+  font-family: "Brown-Reg";
   font-size: 14px;
   color: rgba(255,255,255, 0.87);
   letter-spacing: 0.54px;
@@ -45,14 +44,22 @@
 
 .underline-card {
   margin-top: 8px !important;
+}
 
+.card-footer {
+  display:flex;
+  padding-bottom: 12px;
 }
 
 .card-icon-social {
   color: white;
-  position: absolute;
-  top: 50px;
-  right: 70px;
-  font-size: 30px;
+  font-size: 16px;
   text-shadow: 0 2px 2px 0 rgba(0,0,0,0.50);
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.social-icons {
+  display:flex;
+  align-items: baseline;
 }
