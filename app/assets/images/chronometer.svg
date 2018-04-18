@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M50,92c19.9,0,36-16.1,36-36c0-18.5-14-33.8-32-35.8V16h6V8H40v8h6v4.2c-18,2-32,17.2-32,35.8C14,75.9,30.1,92,50,92z   M50,24c17.6,0,32,14.4,32,32c0,17.6-14.4,32-32,32S18,73.6,18,56C18,38.4,32.4,24,50,24z"/><path d="M50,30v26l13-22.5C59.2,31.3,54.7,30,50,30z"/><path d="M75.8,15.8L70,21.6c5.8,3.4,10.7,8.3,14.1,14.1l5.8-5.8C86.3,24.2,81.4,19.4,75.8,15.8z"/><text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Indygo</text><text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
+
+<svg width="107px" height="119px" viewBox="0 0 107 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-72.000000, -68.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="chronometer" transform="translate(72.000000, 68.000000)">
+                <path d="M51,119 C79.1916667,119 102,96.1916667 102,68 C102,41.7916667 82.1666667,20.1166667 56.6666667,17.2833333 L56.6666667,11.3333333 L65.1666667,11.3333333 L65.1666667,0 L36.8333333,0 L36.8333333,11.3333333 L45.3333333,11.3333333 L45.3333333,17.2833333 C19.8333333,20.1166667 0,41.65 0,68 C0,96.1916667 22.8083333,119 51,119 Z M51,22.6666667 C75.9333333,22.6666667 96.3333333,43.0666667 96.3333333,68 C96.3333333,92.9333333 75.9333333,113.333333 51,113.333333 C26.0666667,113.333333 5.66666667,92.9333333 5.66666667,68 C5.66666667,43.0666667 26.0666667,22.6666667 51,22.6666667 Z" id="Shape"></path>
+                <path d="M51,31 L51,68 L69,35.9807692 C63.7384615,32.85 57.5076923,31 51,31 Z" id="Shape"></path>
+                <path d="M87.160804,11 L79,19.160804 C87.160804,23.9447236 94.0552764,30.839196 98.839196,39 L107,30.839196 C101.934673,22.8190955 95.040201,16.0653266 87.160804,11 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

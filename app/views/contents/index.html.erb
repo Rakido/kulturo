@@ -12,11 +12,8 @@
   <div class="carousel carousel-contents" data-flickity>
     <% @contents.each do |content| %>
       <div class="carousel-cell-contents">
-
         <% if content.kind == "video" %>
           <%= link_to content_path(content) do %>
-
-
             <div class="card">
               <div class="card-image">
                 <%= image_tag(content.image_url) %>
@@ -33,7 +30,7 @@
                 <div class="card-description body-small">
                   <%= truncate(content.description, length: 80) %>
                 </div>
-
+              <% end %>
                 <div class="card-footer">
                   <%= link_to content_bookmarks_path(content), method: :post, class: "social-icons" do %>
                     <div class="card-icon-social">
@@ -41,16 +38,17 @@
                     </div>
                     <div class="nav-cap nav-cap-card">Bookmark</div>
                   <% end %>
-                  <div class="social-icons">
-                   <div class="card-icon-social">
-                      <i class="fa fa-facebook"></i>
-                    </div>
-                    <div class="nav-cap nav-cap-card">Share</div>
-                  </div>
+                
+              <div class="social-icons">
+               <div class="card-icon-social">
+                  <i class="fa fa-facebook"></i>
                 </div>
+                <div class="nav-cap nav-cap-card">Share</div>
               </div>
             </div>
-          <% end %>
+          </div>
+        </div>
+          
         <% else %>
         <!-- open article with url -->
           <%= link_to content.url, target:"_blank" do %>
