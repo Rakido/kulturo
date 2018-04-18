@@ -4,7 +4,6 @@ body {
 
 svg {
   width: 80%;
-  padding-bottom: 40px;
 }
 
 .container {
@@ -35,61 +34,62 @@ svg {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: line-glow 1s .1s infinite;
-  animation: line-glow 1s .1s infinite;
+  -webkit-animation: line-glow 4s .2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+  animation: line-glow 4s .2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 }
 
 #two {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: line-glow 1s .2s infinite;
-  animation: line-glow 1s .2s infinite;
+  -webkit-animation: line-glow 4s .4s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;;
+  animation: line-glow 4s .4s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 }
 
 #three {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: line-glow 1s .3s infinite;
-  animation: line-glow 1s .3s infinite;
+  -webkit-animation: line-glow 4s .6s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+  animation: line-glow 4s .6s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 }
 
 #four {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: line-glow 1s .4s infinite;
-  animation: line-glow 1s .4s infinite;
+  -webkit-animation: line-glow 4s .8s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+  animation: line-glow 4s .8s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 }
 
 #five {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: line-glow 1s .5s infinite;
-  animation: line-glow 1s .5s infinite;
+  -webkit-animation: line-glow 4s 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+  animation: line-glow 4s 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 }
 
 #six {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: line-glow 1s .6s infinite;
-  animation: line-glow 1s .6s infinite;
+  -webkit-animation: line-glow 4s 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+  animation: line-glow 4s 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 }
 
 #seven {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: line-glow 1s .7s infinite;
-  animation: line-glow 1s .7s infinite;
+  -webkit-animation: line-glow 4s 1.4s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;;
+  animation: line-glow 4s 1.4s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 }
 
 #bulb-body-fill {
-  -webkit-animation: bulb-on 1s ease infinite;
-  animation: bulb-on 1s ease infinite;
+  -webkit-animation: bulb-on 3s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+  animation: bulb-on 3s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+  animation-direction: alternate;
 }
 
 @-webkit-keyframes line-glow {
