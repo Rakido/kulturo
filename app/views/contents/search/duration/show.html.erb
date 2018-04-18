@@ -16,7 +16,7 @@
             <div class="col-xs-12">
               <%= link_to contents_search_duration_path(duration: duration), method: :post, class:'category-choice' do %>
                 <div class="icon">
-                  <%= image_tag "contents/duration-pictos/duration-#{duration}.svg", class: "category-icon" %>
+                  <%= inline_svg "contents/duration-pictos/duration-#{duration}.svg", class: 'pictos' %>
                 </div>
                 <div class="step-choice">
                   <%= duration_naming(duration) %>
