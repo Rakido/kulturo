@@ -10,10 +10,10 @@
       <div class="underline" style="margin-top: 80px; margin-bottom: 4vh;"></div>
       <!-- formulaire de modification -->
 
-        <%= f.input :email, label: "Adresse email", placeholder: "jimihendrix@gmail.com"%>
-        <%= f.input :first_name, label: "Prénom", placeholder: "Anatole"%>
-        <%= f.input :last_name, label: "Nom", placeholder: "Gonon"%>
-        <%= f.input :avatar, label: "Photo de profil" %>
+        <%= f.input :email, label: "E-mail adress", placeholder: "jimihendrix@gmail.com"%>
+        <%= f.input :first_name, label: "First Name", placeholder: "Anatole"%>
+        <%= f.input :last_name, label: "Last Name", placeholder: "Gonon"%>
+        <%= f.input :avatar, label: "Profile Picture" %>
 
         <div id="preview" style="width:30px; height:30px;">
         <img src="http://saveabandonedbabies.org/wp-content/uploads/2015/08/default-300x169.png" alt>
@@ -38,7 +38,9 @@
             });
            </script>
         </div>
-        <%= f.submit 'Mise à jour', class: 'btn show-cta cta-input'%>
+        <div>
+        <%= f.submit 'Update', class: 'btn show-cta cta-input'%>
+        </div>
       <% end %>
     </div>
   </div>
