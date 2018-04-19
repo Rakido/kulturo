@@ -76,14 +76,28 @@
        <%= image_tag "contents/hamburger.svg", data: { toggle: 'dropdown' }, class: 'dropdown-toggle' %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li>
+          <% if user_signed_in? %>
+            <%= link_to profile_path do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+          <% end %>
+        <% else %>
           <%= link_to new_user_session_path do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Me connecter") %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Sign In") %>
+          <% end %>
         <% end %>
         </li>
         <li>
-          <%= link_to new_user_registration_path do %>
-            <i class="fa fa-cog"></i>  <%= t(".settings", default: "M'inscrire") %>
+          <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Logout") %>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Sign Up") %>
+            <% end %>
           <% end %>
+
+          
         </li>
       </ul>
     </div>
